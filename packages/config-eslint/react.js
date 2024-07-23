@@ -1,49 +1,40 @@
-const { resolve } = require("node:path");
+/** @type {import('eslint').Linter.Config} */
+const config = {
+  extends: ['plugin:@shopify/react', 'plugin:jsx-a11y/recommended', './base'],
+  rules: {
+    '@shopify/strict-component-boundaries': ['off'],
 
-const project = resolve(process.cwd(), "tsconfig.json");
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        labelComponents: ['FormLabel'],
+        controlComponents: ['Input', 'Select', 'Textarea', 'RadioGroupItem'],
+        labelAttributes: ['children'],
+        depth: 3,
+      },
+    ],
 
-/*
- * This is a custom ESLint configuration for use a library
- * that utilizes React.
- *
- * This config extends the Vercel Engineering Style Guide.
- * For more information, see https://github.com/vercel/style-guide
- *
- */
-
-module.exports = {
-  extends: [
-    "@vercel/style-guide/eslint/browser",
-    "@vercel/style-guide/eslint/typescript",
-    "@vercel/style-guide/eslint/react",
-  ].map(require.resolve),
-  parserOptions: {
-    project,
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': ['off'],
   },
   globals: {
-    JSX: true,
+    React: 'writable',
   },
   settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
-      node: {
-        extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"],
-      },
+    react: {
+      version: 'detect',
     },
   },
-  ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js", "**/*.css"],
-  // add rules configurations here
-  rules: {
-    "import/no-default-export": "off",
+  env: {
+    browser: true,
   },
-  overrides: [
-    {
-      files: ["*.config.js"],
-      env: {
-        node: true,
-      },
-    },
-  ],
-};
+}
+
+module.exports = config
