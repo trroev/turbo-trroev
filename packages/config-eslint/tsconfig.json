@@ -2,7 +2,7 @@
   "compilerOptions": {
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
-  "exclude": ["dist", "build", "node_modules"],
+  "exclude": ["node_modules"],
   "extends": "@shared/typescript-config/base.json",
   "include": ["."]
 }
