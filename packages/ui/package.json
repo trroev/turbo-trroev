@@ -11,7 +11,7 @@
     "./cn": "./src/utils/cn.ts",
     "./*": "./src/components/*/index.ts",
     "./postcss": "./postcss.config.js",
-    "./styles": "./src/styles/styles.css"
+    "./styles": "./src/styles/index.css"
   },
   "license": "MIT",
   "scripts": {

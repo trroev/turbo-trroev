@@ -444,6 +444,143 @@ video {
   display: none;
 }
 
+body {
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  scroll-margin: 5rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+h2 {
+  scroll-margin: 5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+h3 {
+  scroll-margin: 5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h3 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+h4 {
+  scroll-margin: 5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h4 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+h5 {
+  scroll-margin: 5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h5 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h5 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+h6 {
+  scroll-margin: 5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  h6 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h6 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -574,6 +711,11 @@ video {
 
 .border {
   border-width: 1px;
+}
+
+.bg-card {
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 100% / var(--tw-bg-opacity));
 }
 
 .p-6 {
