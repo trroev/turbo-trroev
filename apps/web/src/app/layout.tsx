@@ -1,6 +1,6 @@
 /* eslint-disable react/function-component-definition */
 import './globals.css'
-import '@shares/ui/styles.css'
+import '@shared/ui/styles'
 
 import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
