@@ -69,4 +69,5 @@ const config = {
   reportUnusedDisableDirectives: true,
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 module.exports = config

@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import Image from 'next/image'
 
 import { Card } from '@shared/ui/card'
@@ -48,7 +49,7 @@ export default function Page(): JSX.Element {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-neutral-800 bg-zinc-800/30 bg-gradient-to-b from-inherit px-4 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:bg-zinc-800/30 lg:p-4">
+        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-neutral-800 bg-zinc-800/30 bg-gradient-to-b from-inherit px-4 pb-6 pt-8 backdrop-blur-2xl lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4">
           examples/with-tailwind -&nbsp;
           <code className="font-mono font-bold">docs</code>
         </p>
@@ -121,8 +122,8 @@ export default function Page(): JSX.Element {
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        {LINKS.map(({ title, href, description }) => (
-          <Card href={href} key={title} title={title}>
+        {LINKS.map(({ title, description }) => (
+          <Card key={title} title={title}>
             {description}
           </Card>
         ))}
