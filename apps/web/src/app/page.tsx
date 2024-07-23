@@ -1,7 +1,7 @@
 /* eslint-disable react/function-component-definition */
 import Image from 'next/image'
 
-import { Card } from '@shared/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@shared/ui/card'
 
 function Gradient({
   conic,
@@ -121,10 +121,13 @@ export default function Page(): JSX.Element {
         </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+      <div className="mb-32 grid gap-4 text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         {LINKS.map(({ title, description }) => (
-          <Card key={title} title={title}>
-            {description}
+          <Card key={title}>
+            <CardHeader>
+              <CardTitle>{title}</CardTitle>
+            </CardHeader>
+            <CardContent>{description}</CardContent>
           </Card>
         ))}
       </div>
