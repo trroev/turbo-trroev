@@ -35,7 +35,7 @@ const config = {
 
     'unused-imports/no-unused-imports-ts': ['error'],
 
-    '@typescript-eslint/consistent-type-definitions': ['warn'],
+    '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
     '@typescript-eslint/consistent-type-imports': [
       'error',
       { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
@@ -69,5 +69,4 @@ const config = {
   reportUnusedDisableDirectives: true,
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 module.exports = config

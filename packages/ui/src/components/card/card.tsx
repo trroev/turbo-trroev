@@ -2,13 +2,16 @@ import { forwardRef, type HTMLAttributes } from 'react'
 
 import { cn } from '@shared/ui/cn'
 
-const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
+import { cardVariants, type CardVariantProps } from './card.variants'
+
+export type CardProps = HTMLAttributes<HTMLDivElement> & CardVariantProps
+
+const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ className, isBlurred, radius, shadow, variant, ...props }, ref) => (
     <div
       ref={ref}
       className={cn(
-        'text-card-foreground rounded-lg border bg-card shadow-sm',
-        className,
+        cardVariants({ variant, isBlurred, radius, shadow, className }),
       )}
       {...props}
     />
@@ -50,7 +53,7 @@ const CardDescription = forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn('text-muted-foreground text-sm', className)}
+    className={cn('text-sm text-mutedForeground', className)}
     {...props}
   />
 ))
