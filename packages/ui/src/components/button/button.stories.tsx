@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { type Meta, type StoryObj } from '@storybook/react'
 
+import { Cookie } from '@shared/ui/icons/cookie'
+
 import { Button, type ButtonProps } from './button'
 
 const meta: Meta<typeof Button> = {
@@ -36,6 +38,18 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
   render: (args: ButtonProps) => <Button {...args}>Button Text</Button>,
+}
+
+export const Icon: Story = {
+  args: {
+    size: 'icon',
+  },
+
+  render: (args: ButtonProps) => (
+    <Button {...args}>
+      <Cookie className="size-6" />
+    </Button>
+  ),
 }
 
 export const AsChild: Story = {

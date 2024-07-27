@@ -7,6 +7,7 @@
   "exports": {
     "./cn": "./src/utils/cn.ts",
     "./*": "./src/components/*/index.ts",
+    "./icons/*": "./src/icons/*/index.ts",
     "./postcss": "./postcss.config.js",
     "./styles": "./src/styles/index.css"
   },
