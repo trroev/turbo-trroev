@@ -1,15 +1,14 @@
 import { forwardRef, type ButtonHTMLAttributes } from 'react'
 import { Slot } from '@radix-ui/react-slot'
-import { type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@shared/ui/cn'
 
-import { buttonVariants } from './button.variants'
+import { buttonVariants, type ButtonVariantProps } from './button.variants'
 
 export type ButtonProps = {
   asChild?: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants>
+  ButtonVariantProps
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {

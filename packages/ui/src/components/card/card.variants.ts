@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 
-const cardVariants = cva('border bg-card text-cardForeground', {
+const cardVariants = cva('bg-card text-cardForeground', {
   variants: {
     variant: {
       default: '',
@@ -10,8 +10,12 @@ const cardVariants = cva('border bg-card text-cardForeground', {
       true: 'backdrop-blur-md backdrop-saturate-150',
       false: '',
     },
+    hasBorder: {
+      true: 'border border-border',
+      false: 'border-none',
+    },
     radius: {
-      none: '',
+      none: 'rounded-none',
       sm: 'rounded-sm',
       md: 'rounded-md',
       lg: 'rounded-lg',
