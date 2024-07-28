@@ -5,7 +5,7 @@ import { cn } from '@shared/ui/cn'
 
 import { buttonVariants, type ButtonVariantProps } from './button.variants'
 
-export type ButtonProps = {
+type ButtonProps = {
   asChild?: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonVariantProps
@@ -26,3 +26,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = 'Button'
 
 export { Button, buttonVariants }
+export type { ButtonProps }

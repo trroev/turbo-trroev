@@ -4,7 +4,7 @@ import { cn } from '@shared/ui/cn'
 
 import { badgeVariants, type BadgeVariantProps } from './badge.variants'
 
-export type BadgeProps = HTMLAttributes<HTMLDivElement> & BadgeVariantProps
+type BadgeProps = HTMLAttributes<HTMLDivElement> & BadgeVariantProps
 
 const Badge = ({ className, radius, variant, ...props }: BadgeProps) => {
   return (
@@ -16,3 +16,4 @@ const Badge = ({ className, radius, variant, ...props }: BadgeProps) => {
 }
 
 export { Badge, badgeVariants }
+export type { BadgeProps }
