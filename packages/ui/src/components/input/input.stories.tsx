@@ -1,6 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
 import { Button } from '@shared/ui/button'
+import { Label } from '@shared/ui/label'
 
 import { Input } from './input'
 
@@ -16,6 +17,12 @@ const meta: Meta<typeof Input> = {
       options: ['text', 'password', 'email', 'file'],
       control: { type: 'radio' },
     },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+  },
+  args: {
+    type: 'email',
   },
 }
 
@@ -33,6 +40,15 @@ export const File: Story = {
   },
 
   render: args => <Input {...args} />,
+}
+
+export const WithLabel: Story = {
+  render: args => (
+    <div className="flex flex-col gap-1.5">
+      <Label>Email Address</Label>
+      <Input placeholder="jane.doe@email.com" type="email" {...args} />
+    </div>
+  ),
 }
 
 export const Disabled: Story = {
