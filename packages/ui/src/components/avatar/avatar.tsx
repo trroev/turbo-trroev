@@ -57,7 +57,7 @@ const Avatar = forwardRef<ElementRef<typeof AvatarPrimitive.Root>, AvatarProps>(
   ({ className, fallback, img, radius, size, ...props }, ref) => (
     <AvatarPrimitive.Root
       ref={ref}
-      className={cn(avatarVariants({ radius, size }), className)}
+      className={cn(avatarVariants({ radius, size, className }))}
       {...props}
     >
       {img && <AvatarImage src={img.src} alt={img.alt} />}

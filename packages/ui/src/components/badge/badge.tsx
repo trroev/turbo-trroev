@@ -9,7 +9,7 @@ type BadgeProps = HTMLAttributes<HTMLDivElement> & BadgeVariantProps
 const Badge = ({ className, radius, variant, ...props }: BadgeProps) => {
   return (
     <div
-      className={cn(badgeVariants({ radius, variant }), className)}
+      className={cn(badgeVariants({ radius, variant, className }))}
       {...props}
     />
   )
