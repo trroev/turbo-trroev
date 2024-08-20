@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "exclude": ["dist", "build", "node_modules"],
