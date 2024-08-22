@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "incremental": true,
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "ES2022"],
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "noImplicitAny": false
   },
   "exclude": ["node_modules"],
-  "extends": "@shared/typescript-config/base.json",
-  "include": ["*.ts", "src"]
+  "extends": "@shared/typescript-config/nextjs.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
