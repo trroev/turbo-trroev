@@ -1,72 +1,77 @@
 /** @type {import("eslint").Linter.Config} */
-const config = {
+module.exports = {
+  root: true,
   extends: [
+    'next',
+    'plugin:prettier/recommended',
     'turbo',
-    'eslint:recommended',
-    'plugin:storybook/recommended',
-    'plugin:tailwindcss/recommended',
-    'plugin:@shopify/esnext',
-    'plugin:@shopify/typescript',
-    'plugin:@shopify/typescript-type-checking',
-    'plugin:@typescript-eslint/recommended-type-checked',
-    'plugin:@typescript-eslint/stylistic-type-checked',
-    'plugin:@shopify/prettier',
+    'plugin:you-dont-need-lodash-underscore/compatible-warn',
   ],
-  env: {
-    es2022: true,
-    node: true,
-  },
+  plugins: ['unused-imports'],
   parser: '@typescript-eslint/parser',
-  parserOptions: { project: true },
-  plugins: ['@typescript-eslint', 'import', 'unused-imports', 'prettier'],
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    project: ['./apps/*/tsconfig.json', './packages/*/tsconfig.json'],
+    // project: true,
+  },
+  settings: {
+    next: {
+      rootDir: ['apps/*/', 'packages/*/'],
+    },
+  },
   rules: {
-    'import/first': ['error'],
-    'import/no-extraneous-dependencies': ['off'],
-    'import/newline-after-import': ['error'],
-    'import/no-duplicates': ['error'],
-    'import/prefer-default-export': ['off'],
-    'import/order': ['off'],
-    'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
-
-    'no-console': ['warn'],
-
-    'tailwindcss/no-custom-classname': ['off'],
-    'tailwindcss/classnames-order': ['off'],
-
-    'unused-imports/no-unused-imports-ts': ['error'],
-
-    '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
-    '@typescript-eslint/consistent-type-imports': [
+    '@next/next/no-img-element': 'off',
+    '@next/next/no-html-link-for-pages': 'off',
+    'jsx-a11y/role-supports-aria-props': 'off', // @see https://github.com/vercel/next.js/issues/27989#issuecomment-897638654
+    'react/jsx-curly-brace-presence': [
       'error',
-      { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
+      { props: 'never', children: 'never' },
     ],
-    '@typescript-eslint/no-empty-function': ['warn'],
-    '@typescript-eslint/no-explicit-any': ['error'],
-    '@typescript-eslint/no-misused-promises': [
-      2,
-      { checksVoidReturn: { attributes: false } },
-    ],
-    '@typescript-eslint/no-use-before-define': [
-      'error',
-      { functions: false, classes: false },
-    ],
+    'react/self-closing-comp': ['error', { component: true, html: true }],
     '@typescript-eslint/no-unused-vars': [
-      'error',
+      'warn',
       {
+        vars: 'all',
         varsIgnorePattern: '^_',
+        args: 'after-used',
         argsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
       },
     ],
+    'unused-imports/no-unused-imports': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['lodash'],
+      },
+    ],
+    'prefer-template': 'error',
   },
-  ignorePatterns: [
-    '**/*.config.js',
-    '**/*.config.cjs',
-    '**/.eslintrc.cjs',
-    '.next',
-    'dist',
-    'pnpm-lock.yaml',
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      extends: ['plugin:@typescript-eslint/recommended'],
+      plugins: ['@typescript-eslint'],
+      parser: '@typescript-eslint/parser',
+      rules: {
+        '@typescript-eslint/consistent-type-imports': [
+          'error',
+          {
+            prefer: 'type-imports',
+            fixStyle: 'inline-type-imports',
+            disallowTypeAnnotations: false,
+          },
+        ],
+      },
+      overrides: [
+        {
+          files: ['apps/website/**/*.{tsx,ts}'],
+          rules: {
+            /** TODO: Remove once website router is migrated  */
+            // '@calcom/eslint/deprecated-imports-next-router': 'off',
+          },
+        },
+      ],
+    },
   ],
-  reportUnusedDisableDirectives: true,
 }
-
-module.exports = config

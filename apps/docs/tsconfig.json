@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "incremental": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ES2022"],
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"

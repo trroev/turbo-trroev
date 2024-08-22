@@ -1,4 +1,3 @@
-/* eslint-disable react/function-component-definition */
 import Image from 'next/image'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@shared/ui/card'

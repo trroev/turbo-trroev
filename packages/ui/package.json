@@ -16,6 +16,8 @@
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ./.prettierignore",
     "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "lint:report": "eslint src/ --format json --output-file ../../lint-results/ui.json",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -44,8 +46,7 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@shared/eslint-config/base",
-      "@shared/eslint-config/react"
+      "@shared/eslint-config/base"
     ],
     "ignorePatterns": [
       "turbo/**"

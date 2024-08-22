@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "experimentalDecorators": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ES2022"],
     "paths": {
@@ -8,9 +9,9 @@
       "@shared/ui/cn": ["src/utils/cn.ts"],
       "@shared/ui/types/*": ["src/types/*"]
     },
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "resolveJsonModule": true
   },
   "exclude": ["dist", "build", "node_modules"],
-  "extends": "@shared/typescript-config/base.json",
+  "extends": "@shared/typescript-config/react-library.json",
   "include": ["*.ts", "src"]
 }

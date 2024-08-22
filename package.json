@@ -11,6 +11,8 @@
     "dev": "turbo dev",
     "dev:web": "turbo dev --filter=web...",
     "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "lint:report": "turbo lint:report",
     "type-check": "turbo type-check",
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

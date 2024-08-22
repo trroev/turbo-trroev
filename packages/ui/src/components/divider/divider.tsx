@@ -1,11 +1,12 @@
 'use client'
 
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import type { ComponentPropsWithoutRef, ElementRef } from 'react'
+import { forwardRef } from 'react'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
 import { cn } from '@shared/ui/cn'
 
-import { DividerVariantProps, dividerVariants } from './divider.variants'
+import { dividerVariants, type DividerVariantProps } from './divider.variants'
 
 type DividerProps = ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> &
   DividerVariantProps

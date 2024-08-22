@@ -1,4 +1,4 @@
-import { cva, VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 
 const dividerVariants = cva('shrink-0 bg-border', {
   variants: {

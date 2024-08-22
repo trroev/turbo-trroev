@@ -13,7 +13,16 @@
       "cache": false,
       "persistent": true
     },
-    "lint": {},
+    "lint": {
+      "cache": true
+    },
+    "lint:fix": {
+      "cache": true
+    },
+    "lint:report": {
+      "cache": true,
+      "outputs": ["lint-results/**"]
+    },
     "storybook": {
       "cache": true,
       "persistent": true

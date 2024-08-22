@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 
-const cardVariants = cva('bg-card text-cardForeground', {
+const cardVariants = cva('bg-card text-card-foreground', {
   variants: {
     variant: {
       default: '',

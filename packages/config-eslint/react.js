@@ -1,5 +1,5 @@
 /** @type {import('eslint').Linter.Config} */
-const config = {
+module.exports = {
   extends: ['plugin:@shopify/react', 'plugin:jsx-a11y/recommended', './base'],
   rules: {
     '@shopify/strict-component-boundaries': ['off'],
@@ -36,6 +36,3 @@ const config = {
     browser: true,
   },
 }
-
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-module.exports = config
