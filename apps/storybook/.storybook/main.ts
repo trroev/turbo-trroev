@@ -1,58 +1,86 @@
-import { dirname, join } from 'path'
+import path, { dirname, join } from 'path'
+import type { StorybookConfig } from '@storybook/nextjs'
 
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
- */
-const getAbsolutePath = (packageName: string): string => {
-  return dirname(require.resolve(join(packageName, 'package.json')))
-}
-
-/** @type { import('@storybook/react-vite').StorybookConfig } */
-const config = {
-  stories: [
-    {
-      directory: '../../../packages/ui/src/**',
-      titlePrefix: 'UI',
-      files: '*.stories.*',
-    },
-  ],
+const config: StorybookConfig = {
   addons: [
-    getAbsolutePath('@storybook/addon-a11y'),
-    getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
-    getAbsolutePath('@storybook/addon-viewport'),
-    {
-      name: getAbsolutePath('@storybook/addon-styling-webpack'),
-      options: {
-        rules: [
-          // Replaces existing CSS rules to support PostCSS
-          {
-            test: /\.css$/,
-            use: [
-              'style-loader',
-              {
-                loader: 'css-loader',
-                options: { importLoaders: 1 },
-              },
-              {
-                // Gets options from `postcss.config.js` in your project root
-                loader: 'postcss-loader',
-                options: { implementation: require.resolve('postcss') },
-              },
-            ],
-          },
-        ],
-      },
-    },
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('storybook/addon-rtl-direction'),
+    getAbsolutePath('storybook-react-i18next'),
   ],
+
+  docs: {
+    // @deprecated — Use tags: ['autodocs'] in .storybook/preview.js instead
+    autodocs: true,
+  },
+
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/nextjs') as '@storybook/nextjs',
+
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
+
+  stories: [
+    '../intro.stories.mdx',
+    '../../../packages/ui/components/**/*.stories.@(js|jsx|ts|tsx)',
+  ],
+
+  staticDirs: ['../public'],
+
+  typescript: { reactDocgen: 'react-docgen' },
+
+  webpackFinal: async (config, { configType }) => {
+    config.resolve = config.resolve || {}
+    config.resolve.fallback = {
+      fs: false,
+      assert: false,
+      buffer: false,
+      console: false,
+      constants: false,
+      crypto: false,
+      domain: false,
+      events: false,
+      http: false,
+      https: false,
+      os: false,
+      path: false,
+      punycode: false,
+      process: false,
+      querystring: false,
+      stream: false,
+      string_decoder: false,
+      sys: false,
+      timers: false,
+      tty: false,
+      url: false,
+      util: false,
+      vm: false,
+      zlib: false,
+    }
+
+    config.module = config.module || {}
+    config.module.rules = config.module.rules || []
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true, // Enable modules to help you using className
+          },
+        },
+      ],
+      include: path.resolve(__dirname, '../src'),
+    })
+
+    return config
   },
 }
+
 export default config
+
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, 'package.json')))
+}
