@@ -5,7 +5,8 @@
   "scripts": {
     "build": "storybook build",
     "dev": "storybook dev -p 6006",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@shared/eslint-config": "workspace:*",
@@ -14,15 +15,14 @@
     "@shared/typescript-config": "workspace:*",
     "@shared/ui": "workspace:*",
     "@storybook/addon-docs": "^8.2.9",
-    "@storybook/addons": "^7.6.17",
     "@storybook/blocks": "^8.2.9",
+    "@storybook/manager-api": "^8.2.9",
     "@storybook/nextjs": "^8.2.9",
     "@storybook/preview-api": "^8.2.9",
     "@storybook/theming": "^8.2.9",
     "next": "^14.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "storybook-addon-rtl-direction": "^0.0.19"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
