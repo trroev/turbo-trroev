@@ -9,11 +9,6 @@ const config: StorybookConfig = {
     getAbsolutePath('storybook-react-i18next'),
   ],
 
-  docs: {
-    // @deprecated — Use tags: ['autodocs'] in .storybook/preview.js instead
-    autodocs: true,
-  },
-
   framework: {
     name: getAbsolutePath('@storybook/nextjs') as '@storybook/nextjs',
 

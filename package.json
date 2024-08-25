@@ -16,7 +16,7 @@
     "type-check": "turbo type-check",
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "storybook": "turbo storybook",
+    "storybook": "turbo dev --filter=storybook...",
     "storybook:ui": "turbo storybook --filter=ui",
     "build-storybook": "turbo build-storybook"
   },
