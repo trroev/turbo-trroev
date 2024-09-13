@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   reactStrictMode: true,
-  transpilePackages: ['@shared/ui'],
+  transpilePackages: ['@trroev/ui'],
   typescript: {
     ignoreBuildErrors: true,
   },

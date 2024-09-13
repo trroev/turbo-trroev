@@ -16,11 +16,12 @@ const config = {
   useTabs: false,
   plugins: [
     '@ianvs/prettier-plugin-sort-imports',
+    'prettier-plugin-packagejson',
     'prettier-plugin-sort-json',
     'prettier-plugin-tailwindcss',
   ],
   tailwindConfig: fileURLToPath(
-    new URL('../config-tailwind/src/tailwind.ts', import.meta.url),
+    new URL('../../tooling/tailwind/src/tailwind.ts', import.meta.url),
   ),
   tailwindFunctions: ['cn', 'clsx', 'cva', 'tw', 'twMerge', 'classNames'],
   jsonRecursiveSort: true,
@@ -29,14 +30,14 @@ const config = {
     '^(next/(.*)$)|^(next$)',
     '<THIRD_PARTY_MODULES>',
     '',
-    '^@shared/(.*)$',
+    '^@trroev/(.*)$',
     '',
     '^~/',
     '^[../]',
     '^[./]',
   ],
   importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
-  importOrderTypeScriptVersion: '4.4.0',
+  importOrderTypeScriptVersion: '5.5.3',
 }
 
 export default config

@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef, ElementRef } from 'react'
 import { forwardRef } from 'react'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
 
 import { dividerVariants, type DividerVariantProps } from './divider.variants'
 

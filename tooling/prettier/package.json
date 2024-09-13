@@ -1,7 +1,7 @@
 {
-  "name": "@shared/prettier-config",
+  "name": "@trroev/prettier-config",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "exports": {
     ".": "./index.js"
@@ -11,15 +11,16 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit"
   },
+  "prettier": "@trroev/prettier-config",
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.0",
     "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.1",
     "prettier-plugin-sort-json": "^4.0.0",
-    "prettier-plugin-tailwindcss": "^0.6.5"
+    "prettier-plugin-tailwindcss": "^0.5.14"
   },
   "devDependencies": {
-    "@shared/typescript-config": "workspace:*",
-    "typescript": "^5.5.3"
-  },
-  "prettier": "@shared/prettier-config"
+    "@trroev/tsconfig": "workspace:*",
+    "typescript": "^5.6.2"
+  }
 }

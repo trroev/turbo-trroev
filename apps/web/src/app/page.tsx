@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@shared/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@trroev/ui/card'
 
 function Gradient({
   conic,

@@ -1,16 +1,22 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
+  env: {
+    browser: true,
+  },
   extends: ['plugin:@shopify/react', 'plugin:jsx-a11y/recommended', './base'],
+  globals: {
+    React: 'writable',
+  },
   rules: {
     '@shopify/strict-component-boundaries': ['off'],
 
     'jsx-a11y/label-has-associated-control': [
       'error',
       {
-        labelComponents: ['FormLabel'],
         controlComponents: ['Input', 'Select', 'Textarea', 'RadioGroupItem'],
-        labelAttributes: ['children'],
         depth: 3,
+        labelAttributes: ['children'],
+        labelComponents: ['FormLabel'],
       },
     ],
 
@@ -24,15 +30,9 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': ['off'],
   },
-  globals: {
-    React: 'writable',
-  },
   settings: {
     react: {
       version: 'detect',
     },
-  },
-  env: {
-    browser: true,
   },
 }

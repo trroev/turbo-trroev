@@ -1,33 +1,22 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "baseUrl": ".",
     "experimentalDecorators": true,
+    "incremental": true,
     "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "noEmit": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "strictNullChecks": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "noEmit": true,
-    "incremental": true,
-    "module": "esnext",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "strictNullChecks": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "extends": "@shared/typescript-config/base.json",
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ]
+  "exclude": ["node_modules"],
+  "extends": "@trroev/tsconfig/base.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }

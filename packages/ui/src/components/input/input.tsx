@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes } from 'react'
 import { forwardRef } from 'react'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
 
 import { inputVariants, type InputVariantProps } from './input.variants'
 

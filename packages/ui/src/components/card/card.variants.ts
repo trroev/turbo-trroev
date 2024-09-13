@@ -29,6 +29,7 @@ const cardVariants = cva('bg-card text-card-foreground', {
   },
   defaultVariants: {
     variant: 'default',
+    hasBorder: true,
     isBlurred: false,
     radius: 'lg',
     shadow: 'sm',

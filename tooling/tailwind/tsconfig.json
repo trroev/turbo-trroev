@@ -4,6 +4,6 @@
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "exclude": ["dist", "build", "node_modules"],
-  "extends": "@shared/typescript-config/base.json",
+  "extends": "@trroev/tsconfig/base.json",
   "include": ["."]
 }

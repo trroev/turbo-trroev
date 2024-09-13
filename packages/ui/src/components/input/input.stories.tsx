@@ -1,7 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '@shared/ui/button'
-import { Label } from '@shared/ui/label'
+import { Button } from '@trroev/ui/button'
+import { Label } from '@trroev/ui/label'
 
 import { Input } from './input'
 

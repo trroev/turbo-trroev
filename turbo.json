@@ -1,6 +1,14 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [],
+  "globalEnv": [],
+  "remoteCache": {
+    "enabled": true
+  },
   "tasks": {
+    "//#clean": {
+      "cache": false
+    },
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
@@ -13,20 +21,25 @@
       "cache": false,
       "persistent": true
     },
+    "format": {
+      "outputLogs": "new-only",
+      "outputs": ["node_modules/.cache/.prettiercache"]
+    },
     "lint": {
-      "cache": true
-    },
-    "lint:fix": {
-      "cache": true
-    },
-    "lint:report": {
-      "cache": true,
-      "outputs": ["lint-results/**"]
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/.eslintcache"]
     },
     "storybook": {
       "cache": true,
       "persistent": true
     },
-    "type-check": {}
-  }
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "type-check": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+    }
+  },
+  "ui": "stream"
 }

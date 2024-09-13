@@ -4,7 +4,7 @@
  */
 import { type Config } from 'tailwindcss'
 
-import baseConfig from '@shared/tailwind-config'
+import baseConfig from '@trroev/tailwind-config'
 
 export default {
   content: [...baseConfig.content, '../../packages/*/src/**/*.{ts,tsx}'],

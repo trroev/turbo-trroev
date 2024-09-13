@@ -4,14 +4,15 @@
     "experimentalDecorators": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ES2022"],
+    "noUnusedLocals": false,
     "paths": {
-      "@shared/ui/*": ["src/components/*/index.ts"],
-      "@shared/ui/cn": ["src/utils/cn.ts"],
-      "@shared/ui/types/*": ["src/types/*"]
+      "@trroev/ui/*": ["src/components/*/index.ts"],
+      "@trroev/ui/cn": ["src/utils/cn.ts"],
+      "@trroev/ui/types/*": ["src/types/*"]
     },
     "resolveJsonModule": true
   },
   "exclude": ["dist", "build", "node_modules"],
-  "extends": "@shared/typescript-config/react-library.json",
+  "extends": "@trroev/tsconfig/react-library.json",
   "include": ["*.ts", "src"]
 }

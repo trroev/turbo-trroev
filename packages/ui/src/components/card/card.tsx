@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
 
 import { cardVariants, type CardVariantProps } from './card.variants'
 

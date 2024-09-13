@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '@shared/ui/button'
+import { Button } from '@trroev/ui/button'
 
 import {
   Card,
@@ -126,7 +126,7 @@ export const WithBodyImage: Story = {
         <img
           alt="Card background"
           src="https://picsum.photos/200/300"
-          className="w-full rounded-xl object-cover object-center"
+          className="w-full rounded object-cover object-center"
         />
       </CardContent>
       <CardFooter className="flex justify-between">
