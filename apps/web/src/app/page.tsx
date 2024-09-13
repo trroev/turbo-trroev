@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@trroev/ui/card'
 
-function Gradient({
+const Gradient = ({
   conic,
   className,
   small,
@@ -10,7 +10,7 @@ function Gradient({
   small?: boolean
   conic?: boolean
   className?: string
-}): JSX.Element {
+}): JSX.Element => {
   return (
     <span
       className={`absolute rounded-[100%] mix-blend-normal will-change-[filter] ${
@@ -44,7 +44,7 @@ const LINKS = [
   },
 ]
 
-export default function Page(): JSX.Element {
+const Page = (): JSX.Element => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -133,3 +133,5 @@ export default function Page(): JSX.Element {
     </main>
   )
 }
+
+export default Page

@@ -5,8 +5,8 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    "./cn": "./src/utils/cn.ts",
     "./*": "./src/components/*/index.ts",
+    "./cn": "./src/utils/cn.ts",
     "./icons/*": "./src/icons/*/index.ts",
     "./postcss": "./postcss.config.js",
     "./styles": "./src/styles/index.css"
@@ -18,12 +18,23 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:report": "eslint src/ --format json --output-file ../../lint-results/ui.json",
-    "type-check": "tsc --noEmit"
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@trroev/prettier-config",
   "eslintConfig": {
     "extends": [
-      "@trroev/eslint-config/base"
+      "@trroev/eslint-config/base",
+      "@trroev/eslint-config/react"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "./src/components/**/*.stories.tsx"
+        ],
+        "rules": {
+          "jsx-a11y/anchor-is-valid": "off"
+        }
+      }
     ],
     "ignorePatterns": [
       "turbo/**"
@@ -48,7 +59,9 @@
     "@trroev/tsconfig": "workspace:*",
     "@types/react": "catalog:next14or15",
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
     "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.6.2"
   }

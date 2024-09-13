@@ -5,11 +5,10 @@ import { cn } from '@trroev/ui/cn'
 
 import { buttonVariants, type ButtonVariantProps } from './button.variants'
 
-interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariantProps {
+type ButtonProps = {
   asChild?: boolean
-}
+} & ButtonHTMLAttributes<HTMLButtonElement> &
+  ButtonVariantProps
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {

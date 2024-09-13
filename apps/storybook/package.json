@@ -7,6 +7,17 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006"
   },
+  "prettier": "@trroev/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@trroev/eslint-config/base",
+      "@trroev/eslint-config/react"
+    ],
+    "ignorePatterns": [
+      "sst-env.d.ts"
+    ],
+    "root": true
+  },
   "dependencies": {
     "@storybook/addon-docs": "^8.2.9",
     "@storybook/blocks": "^8.2.9",

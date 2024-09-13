@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
-  "exclude": ["dist", "build", "node_modules"],
+  "exclude": ["node_modules"],
   "extends": "@trroev/tsconfig/base.json",
   "include": ["."]
 }

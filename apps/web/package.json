@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "clean": "git clean -xdf .next .turbo node_modules",
     "dev": "next dev",
-    "lint": "next lint",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint .",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "prettier": "@trroev/prettier-config",
   "eslintConfig": {
@@ -15,6 +17,9 @@
       "@trroev/eslint-config/base",
       "@trroev/eslint-config/nextjs",
       "@trroev/eslint-config/react"
+    ],
+    "ignorePatterns": [
+      "next-env.d.ts"
     ],
     "root": true
   },

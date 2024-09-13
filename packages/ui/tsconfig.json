@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "experimentalDecorators": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ES2022"],
-    "noUnusedLocals": false,
     "paths": {
       "@trroev/ui/*": ["src/components/*/index.ts"],
       "@trroev/ui/cn": ["src/utils/cn.ts"],
       "@trroev/ui/types/*": ["src/types/*"]
     },
-    "resolveJsonModule": true
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
-  "exclude": ["dist", "build", "node_modules"],
+  "exclude": ["node_modules"],
   "extends": "@trroev/tsconfig/internal-package.json",
   "include": ["*.ts", "src"]
 }
