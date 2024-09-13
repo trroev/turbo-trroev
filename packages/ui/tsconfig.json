@@ -13,6 +13,6 @@
     "resolveJsonModule": true
   },
   "exclude": ["dist", "build", "node_modules"],
-  "extends": "@trroev/tsconfig/react-library.json",
+  "extends": "@trroev/tsconfig/internal-package.json",
   "include": ["*.ts", "src"]
 }
