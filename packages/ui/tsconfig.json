@@ -4,13 +4,13 @@
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ES2022"],
     "paths": {
-      "@shared/ui/*": ["src/components/*/index.ts"],
-      "@shared/ui/cn": ["src/utils/cn.ts"],
-      "@shared/ui/types/*": ["src/types/*"]
+      "@trroev/ui/*": ["src/components/*/index.ts"],
+      "@trroev/ui/cn": ["src/utils/cn.ts"],
+      "@trroev/ui/types/*": ["src/types/*"]
     },
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
-  "exclude": ["dist", "build", "node_modules"],
-  "extends": "@shared/typescript-config/base.json",
+  "exclude": ["node_modules"],
+  "extends": "@trroev/tsconfig/internal-package.json",
   "include": ["*.ts", "src"]
 }

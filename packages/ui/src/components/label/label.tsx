@@ -1,11 +1,15 @@
 'use client'
 
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ElementRef,
+} from 'react'
 import * as LabelPrimitive from '@radix-ui/react-label'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
 
-import { LabelVariantProps, labelVariants } from './label.variants'
+import { labelVariants, type LabelVariantProps } from './label.variants'
 
 type LabelProps = ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
   LabelVariantProps

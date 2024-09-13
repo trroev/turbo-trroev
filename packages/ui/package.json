@@ -1,12 +1,12 @@
 {
-  "name": "@shared/ui",
+  "name": "@trroev/ui",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "type": "module",
   "exports": {
-    "./cn": "./src/utils/cn.ts",
     "./*": "./src/components/*/index.ts",
+    "./cn": "./src/utils/cn.ts",
     "./icons/*": "./src/icons/*/index.ts",
     "./postcss": "./postcss.config.js",
     "./styles": "./src/styles/index.css"
@@ -15,8 +15,31 @@
     "add": "pnpm dlx shadcn-ui@latest add",
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ./.prettierignore",
-    "lint": "eslint src/",
-    "type-check": "tsc --noEmit"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:report": "eslint src/ --format json --output-file ../../lint-results/ui.json",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@trroev/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@trroev/eslint-config/base",
+      "@trroev/eslint-config/react"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "./src/components/**/*.stories.tsx"
+        ],
+        "rules": {
+          "jsx-a11y/anchor-is-valid": "off"
+        }
+      }
+    ],
+    "ignorePatterns": [
+      "turbo/**"
+    ],
+    "root": true
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.0",
@@ -25,31 +48,21 @@
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "react": "catalog:next14",
+    "react-dom": "catalog:next14",
     "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
-    "@shared/eslint-config": "workspace:*",
-    "@shared/tailwind-config": "workspace:*",
-    "@shared/typescript-config": "workspace:*",
-    "@storybook/react": "^8.2.7",
-    "@types/react": "^18.3.3",
+    "@storybook/react": "^8.2.9",
+    "@trroev/eslint-config": "workspace:*",
+    "@trroev/tailwind-config": "workspace:*",
+    "@trroev/tsconfig": "workspace:*",
+    "@types/react": "catalog:next14or15",
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
     "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.7",
-    "typescript": "^5.5.4"
-  },
-  "peerDependencies": {
-    "react": "^18.3.1"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@shared/eslint-config/base",
-      "@shared/eslint-config/react"
-    ],
-    "ignorePatterns": [
-      "turbo/**"
-    ]
-  },
-  "prettier": "@shared/prettier-config"
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.6.2"
+  }
 }

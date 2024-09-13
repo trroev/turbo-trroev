@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Cookie } from '@shared/ui/icons/cookie'
+import { Cookie } from '@trroev/ui/icons/cookie'
 
 import { Button, type ButtonProps } from './button'
 

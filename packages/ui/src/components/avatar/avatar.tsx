@@ -7,7 +7,7 @@ import {
 } from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
 
 import { avatarVariants, type AvatarVariantProps } from './avatar.variants'
 

@@ -1,8 +1,8 @@
-import { forwardRef, InputHTMLAttributes } from 'react'
+import { forwardRef, type InputHTMLAttributes } from 'react'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
 
-import { InputVariantProps, inputVariants } from './input.variants'
+import { inputVariants, type InputVariantProps } from './input.variants'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & InputVariantProps
 

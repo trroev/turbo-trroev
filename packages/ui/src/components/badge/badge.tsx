@@ -1,6 +1,6 @@
 import { type HTMLAttributes } from 'react'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
 
 import { badgeVariants, type BadgeVariantProps } from './badge.variants'
 
