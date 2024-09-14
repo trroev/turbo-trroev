@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@trroev/layout": "workspace:*",
+    "@trroev/page": "workspace:*",
     "@trroev/ui": "workspace:*",
     "next": "catalog:next14",
     "react": "catalog:next14",
@@ -34,7 +35,7 @@
     "@trroev/eslint-config": "workspace:*",
     "@trroev/tailwind-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.14.15",
     "@types/react": "catalog:next14or15",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",

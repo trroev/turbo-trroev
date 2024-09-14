@@ -1,4 +1,4 @@
-import { cva, VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 
 const headingVariants = cva('scroll-m-20 tracking-tight', {
   variants: {

@@ -16,7 +16,9 @@ const RootLayout: FC<RootLayoutProps> = ({
     <head>{head}</head>
     <body className="min-h-screen bg-background antialiased">
       {header}
-      {children}
+      <div className="relative flex min-h-screen flex-col bg-background">
+        {children}
+      </div>
       {footer}
     </body>
   </html>

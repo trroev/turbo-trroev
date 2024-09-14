@@ -53,6 +53,7 @@
     "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
+    "@axa-ch/react-polymorphic-types": "^1.2.5",
     "@storybook/react": "^8.2.9",
     "@trroev/eslint-config": "workspace:*",
     "@trroev/tailwind-config": "workspace:*",

@@ -1,5 +1,5 @@
 {
-  "name": "@trroev/layout",
+  "name": "@trroev/page",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
@@ -22,7 +22,7 @@
     "root": true
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.0",
+    "@trroev/env": "workspace:*",
     "@trroev/ui": "workspace:*",
     "next": "catalog:next14or15"
   },
