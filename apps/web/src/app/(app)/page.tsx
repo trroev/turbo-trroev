@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@trroev/ui/card'
 
@@ -121,13 +122,15 @@ const Page = (): JSX.Element => {
       </div>
 
       <div className="mb-32 grid gap-4 text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        {LINKS.map(({ title, description }) => (
-          <Card key={title}>
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
-            </CardHeader>
-            <CardContent>{description}</CardContent>
-          </Card>
+        {LINKS.map(({ title, description, href }) => (
+          <Link key={href} href={href}>
+            <Card>
+              <CardHeader>
+                <CardTitle>{title}</CardTitle>
+              </CardHeader>
+              <CardContent>{description}</CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
     </main>

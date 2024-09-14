@@ -1,44 +1,42 @@
 {
-  "name": "web",
-  "version": "1.0.0",
+  "name": "@trroev/layout",
+  "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./*": "./src/*/index.ts"
+  },
   "scripts": {
-    "build": "next build",
-    "clean": "git clean -xdf .next .turbo node_modules",
-    "dev": "next dev",
+    "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint .",
-    "start": "next start",
     "typecheck": "tsc --noEmit"
   },
   "prettier": "@trroev/prettier-config",
   "eslintConfig": {
     "extends": [
       "@trroev/eslint-config/base",
-      "@trroev/eslint-config/nextjs",
       "@trroev/eslint-config/react"
-    ],
-    "ignorePatterns": [
-      "next-env.d.ts"
     ],
     "root": true
   },
   "dependencies": {
-    "@trroev/layout": "workspace:*",
+    "@radix-ui/react-slot": "^1.1.0",
     "@trroev/ui": "workspace:*",
-    "next": "catalog:next14",
-    "react": "catalog:next14",
-    "react-dom": "catalog:next14"
+    "next": "catalog:next14or15"
   },
   "devDependencies": {
+    "@storybook/react": "^8.2.9",
     "@trroev/eslint-config": "workspace:*",
-    "@trroev/tailwind-config": "workspace:*",
+    "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
     "@types/node": "^20.11.24",
     "@types/react": "catalog:next14or15",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.10",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "react": "catalog:next14or15",
+    "react-dom": "catalog:next14or15",
     "typescript": "^5.6.2"
   }
 }
