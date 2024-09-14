@@ -1,6 +1,7 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 
 import { cn } from '@trroev/ui/cn'
+import { Heading } from '@trroev/ui/Heading'
 
 import { cardVariants, type CardVariantProps } from './card.variants'
 
@@ -34,16 +35,9 @@ const CardTitle = forwardRef<
   HTMLParagraphElement,
   HTMLAttributes<HTMLHeadingElement>
 >(({ children, className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      'text-2xl font-semibold leading-none tracking-tight',
-      className,
-    )}
-    {...props}
-  >
+  <Heading as="h3" ref={ref} className={cn(className)} {...props}>
     {children}
-  </h3>
+  </Heading>
 ))
 CardTitle.displayName = 'CardTitle'
 

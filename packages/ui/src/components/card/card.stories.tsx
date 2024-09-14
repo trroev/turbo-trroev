@@ -56,7 +56,7 @@ export const Default: Story = {
 
 export const WithHeader: Story = {
   render: (args: CardProps) => (
-    <Card className="w-80" {...args}>
+    <Card {...args} className="w-80">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card Description</CardDescription>
