@@ -21,11 +21,21 @@
     "storybook": "turbo storybook",
     "typecheck": "turbo typecheck"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json}": [
+      "prettier --write"
+    ]
+  },
   "prettier": "@trroev/prettier-config",
   "devDependencies": {
     "@trroev/prettier-config": "workspace:*",
     "@turbo/gen": "2.1.2",
     "husky": "9.1.6",
+    "lint-staged": "^15.2.10",
     "npm-check-updates": "17.1.1",
     "prettier": "^3.3.3",
     "syncpack": "^13.0.0",
