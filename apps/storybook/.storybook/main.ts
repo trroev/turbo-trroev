@@ -16,7 +16,6 @@ const config: StorybookConfig = {
   },
 
   stories: [
-    '../intro.stories.mdx',
     '../../../packages/ui/src/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
 
