@@ -1,7 +1,17 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [],
-  "globalEnv": [],
+  "globalDependencies": ["**/.env", "**/.env.development", "**/.env.prod"],
+  "globalEnv": [
+    "CI",
+    "NODE_ENV",
+    "NEXT_PUBLIC_PAYLOAD_URL",
+    "NEXT_PUBLIC_SITE_URL",
+    "PAYLOAD_PRIVATE_DATABASE_URI",
+    "PAYLOAD_PRIVATE_SECRET",
+    "PAYLOAD_PRIVATE_REVALIDATION_KEY",
+    "SKIP_ENV_VALIDATION",
+    "npm_lifecycle_event"
+  ],
   "remoteCache": {
     "enabled": true
   },
