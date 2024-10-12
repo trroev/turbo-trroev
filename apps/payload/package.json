@@ -1,0 +1,79 @@
+{
+  "name": "payload",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "dotenvx run --convention=nextjs -- cross-env NODE_OPTIONS=--no-deprecation next build",
+    "ci": "payload migrate && pnpm build --filter payload",
+    "clean": "git clean -xdf .next .turbo node_modules",
+    "dev": "dotenvx run --convention=nextjs -- cross-env NODE_OPTIONS='--no-deprecation --inspect' next dev",
+    "dev:clean": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "dev:clean:turbo": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev --turbo",
+    "dev:turbo": "cross-env NODE_OPTIONS=--no-deprecation next dev --turbo",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ./.prettierignore",
+    "generate:schema": "payload-graphql generate:schema",
+    "generate:types": "payload generate:types",
+    "lint": "eslint .",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "reinstall": "pnpm clean && pnpm i",
+    "standalone-script": "node ./src/scripts/standalone-script.js",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@trroev/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@trroev/eslint-config/base",
+      "@trroev/eslint-config/nextjs"
+    ],
+    "ignorePatterns": [
+      "next-env.d.ts",
+      "src/payload.types.ts",
+      "src/app/(payload)/**/*"
+    ]
+  },
+  "dependencies": {
+    "@payloadcms/db-mongodb": "3.0.0-beta.111",
+    "@payloadcms/db-sqlite": "3.0.0-beta.111",
+    "@payloadcms/graphql": "3.0.0-beta.111",
+    "@payloadcms/live-preview-react": "3.0.0-beta.111",
+    "@payloadcms/next": "3.0.0-beta.111",
+    "@payloadcms/plugin-nested-docs": "3.0.0-beta.111",
+    "@payloadcms/plugin-redirects": "3.0.0-beta.111",
+    "@payloadcms/plugin-seo": "3.0.0-beta.111",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.111",
+    "@trroev/env": "workspace:*",
+    "@trroev/layout": "workspace:*",
+    "@trroev/page": "workspace:*",
+    "@trroev/payload": "workspace:*",
+    "@trroev/redirects": "workspace:*",
+    "@trroev/themes": "workspace:*",
+    "@trroev/ui": "workspace:*",
+    "babel-plugin-react-compiler": "^0.0.0",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.9.0",
+    "next": "catalog:next15",
+    "payload": "3.0.0-beta.111",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15",
+    "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.7.0",
+    "@trroev/eslint-config": "workspace:*",
+    "@trroev/prettier-config": "workspace:*",
+    "@trroev/tailwind-config": "workspace:*",
+    "@trroev/tsconfig": "workspace:*",
+    "@trroev/types": "workspace:*",
+    "@types/node": "^20.14.15",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.0.0-rc.0",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.6.2"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  }
+}
