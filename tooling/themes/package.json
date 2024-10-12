@@ -1,0 +1,22 @@
+{
+  "name": "@trroev/themes",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "exports": {
+    "./default.css": "./src/default/index.css"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore"
+  },
+  "prettier": "@trroev/prettier-config",
+  "devDependencies": {
+    "@trroev/prettier-config": "workspace:*",
+    "prettier": "^3.3.3"
+  }
+}
