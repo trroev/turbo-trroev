@@ -776,6 +776,8 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
 
+  tooling/github: {}
+
   tooling/prettier:
     dependencies:
       '@ianvs/prettier-plugin-sort-imports':
@@ -797,6 +799,9 @@ importers:
       '@trroev/tsconfig':
         specifier: workspace:*
         version: link:../typescript
+      '@types/node':
+        specifier: ^20.16.13
+        version: 20.17.1
       typescript:
         specifier: ^5.6.3
         version: 5.6.3

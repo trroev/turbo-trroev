@@ -1,6 +1,7 @@
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import {
   type CollectionBeforeChangeHook,
+  type CollectionSlug,
   type Config,
   type Plugin,
 } from 'payload'
@@ -38,26 +39,19 @@ export const nestedDocsPlusPlugin =
       ...nestedDocsConfig,
       collections: (nestedDocsConfig.collections ?? []).map(collection => {
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        const fields = [...(collection.fields ?? [])].map(field => {
-          if ('name' in field && field.name === 'breadcrumbs') {
-            return {
-              ...field,
-              hidden: true,
-            }
-          }
+        const fields = [...(collection.fields ?? [])]
 
-          return field
-        })
-
-        fields.push({
-          admin: {
-            position: 'sidebar',
-            readOnly: true,
-          },
-          label: 'Pathname',
-          name: 'pathname',
-          type: 'text',
-        })
+        if (pluginConfig.collections.includes(collection.slug)) {
+          fields.push({
+            admin: {
+              position: 'sidebar',
+              readOnly: true,
+            },
+            label: 'Route Path',
+            name: 'pathname',
+            type: 'text',
+          })
+        }
 
         return {
           ...collection,
@@ -76,7 +70,7 @@ export const nestedDocsPlusPlugin =
 
         for (const collectionName of pluginConfig.collections) {
           const docsToUpdate = await payload.find({
-            collection: collectionName,
+            collection: collectionName as CollectionSlug,
             depth: 1,
             limit: 0,
             where: {
@@ -88,7 +82,7 @@ export const nestedDocsPlusPlugin =
 
           for (const doc of docsToUpdate.docs) {
             await payload.update({
-              collection: collectionName,
+              collection: collectionName as CollectionSlug,
               data: {
                 ...doc,
               },
