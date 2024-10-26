@@ -1,0 +1,65 @@
+name: Production Deployment
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+env:
+  AWS_REGION: 'us-east-1'
+  AWS_ROLE: '${{ null }}' # This role will be created by Terraform. This is the value from the 'github_role_arn' output from the shared configuration.
+
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+
+jobs:
+  get-aws-role:
+    name: Get AWS Role
+    runs-on: ubuntu-latest
+    outputs:
+      role: ${{ steps.get-role.outputs.role }}
+    steps:
+      - id: get-role
+        run: echo "role=${{ env.AWS_ROLE }}" >> "$GITHUB_OUTPUT"
+
+  deploy-next:
+    name: Deploy Web
+    runs-on: ubuntu-latest
+    needs: [get-aws-role]
+    if: needs.get-aws-role.outputs.role != null
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.AWS_ROLE }}
+          role-session-name: github-actions-web
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup
+        uses: ./tooling/github/setup
+
+      - name: Setup environment variables
+        working-directory: ./apps/web
+        env:
+          DOTENV_PRIVATE_KEY_PROD: ${{ secrets.DOTENV_PRIVATE_KEY }}
+        run: |
+          curl -fsS https://dotenvx.sh | sh
+          dotenvx get -f .env.prod | jq -r 'to_entries|map("\(.key)=\"\(.value|tostring)\"")|.[]' > .env
+
+      - name: Generate types
+        working-directory: ./apps/web
+        run: |
+          pnpm generate:types
+
+      - name: Build dependencies
+        run: pnpm build --filter web
+
+      - name: Deploy
+        working-directory: ./apps/web
+        run: npx sst deploy --stage prod
