@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@trroev/types": "workspace:*",
-    "next": "catalog:next14or15",
+    "next": "catalog:next15",
     "zod": "^3.23.8"
   },
   "devDependencies": {

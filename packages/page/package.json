@@ -22,13 +22,13 @@
     "root": true
   },
   "dependencies": {
-    "@payloadcms/live-preview-react": "3.0.0-beta.111",
-    "@payloadcms/next": "3.0.0-beta.111",
+    "@payloadcms/live-preview-react": "3.0.0-beta.119",
+    "@payloadcms/next": "3.0.0-beta.119",
     "@trroev/env": "workspace:*",
     "@trroev/payload": "workspace:*",
     "@trroev/ui": "workspace:*",
-    "next": "catalog:next14or15",
-    "payload": "3.0.0-beta.111"
+    "next": "catalog:next15",
+    "payload": "3.0.0-beta.119"
   },
   "devDependencies": {
     "@storybook/react": "^8.2.9",
@@ -36,11 +36,11 @@
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
     "@types/node": "^20.14.15",
-    "@types/react": "catalog:next14or15",
+    "@types/react": "catalog:next15",
     "eslint": "^8.57.0",
     "prettier": "^3.3.3",
-    "react": "catalog:next14or15",
-    "react-dom": "catalog:next14or15",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15",
     "typescript": "^5.6.2"
   }
 }

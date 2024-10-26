@@ -24,7 +24,7 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
     "@trroev/ui": "workspace:*",
-    "next": "catalog:next14or15"
+    "next": "catalog:next15"
   },
   "devDependencies": {
     "@storybook/react": "^8.2.9",
@@ -32,11 +32,11 @@
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
     "@types/node": "^20.14.15",
-    "@types/react": "catalog:next14or15",
+    "@types/react": "catalog:next15",
     "eslint": "^8.57.0",
     "prettier": "^3.3.3",
-    "react": "catalog:next14or15",
-    "react-dom": "catalog:next14or15",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15",
     "typescript": "^5.6.2"
   }
 }

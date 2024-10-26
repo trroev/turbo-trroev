@@ -30,9 +30,9 @@
     "@trroev/tailwind-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
     "@trroev/ui": "workspace:*",
-    "next": "catalog:next14or15",
-    "react": "catalog:next14or15",
-    "react-dom": "catalog:next14or15"
+    "next": "catalog:next15",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -45,7 +45,7 @@
     "@storybook/addon-viewport": "^8.2.9",
     "@storybook/cli": "^8.2.9",
     "@storybook/react": "^8.2.9",
-    "@types/react": "catalog:next14or15",
+    "@types/react": "catalog:next15",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.1.3",

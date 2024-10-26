@@ -27,16 +27,16 @@
     "@trroev/layout": "workspace:*",
     "@trroev/page": "workspace:*",
     "@trroev/ui": "workspace:*",
-    "next": "catalog:next14",
-    "react": "catalog:next14",
-    "react-dom": "catalog:next14"
+    "next": "catalog:next15",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15"
   },
   "devDependencies": {
     "@trroev/eslint-config": "workspace:*",
     "@trroev/tailwind-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
     "@types/node": "^20.14.15",
-    "@types/react": "catalog:next14or15",
+    "@types/react": "catalog:next15",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
