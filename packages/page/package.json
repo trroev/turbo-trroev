@@ -22,9 +22,13 @@
     "root": true
   },
   "dependencies": {
+    "@payloadcms/live-preview-react": "3.0.0-beta.111",
+    "@payloadcms/next": "3.0.0-beta.111",
     "@trroev/env": "workspace:*",
+    "@trroev/payload": "workspace:*",
     "@trroev/ui": "workspace:*",
-    "next": "catalog:next14or15"
+    "next": "catalog:next14or15",
+    "payload": "3.0.0-beta.111"
   },
   "devDependencies": {
     "@storybook/react": "^8.2.9",

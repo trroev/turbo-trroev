@@ -9,7 +9,7 @@
     "./cn": "./src/utils/cn.ts",
     "./icons/*": "./src/icons/*/index.ts",
     "./postcss": "./postcss.config.js",
-    "./styles": "./src/styles/index.css"
+    "./styles.css": "./src/styles/index.css"
   },
   "scripts": {
     "add": "pnpm dlx shadcn-ui@latest add",

@@ -1,47 +1,24 @@
 import { type FieldHook } from 'payload'
 
-const format = (val: string): string => {
-  const withoutInitialSlash = val.startsWith('/') ? val.slice(1) : val
+import { formatSlug } from '@trroev/payload/helpers/formatSlug'
 
-  return `${withoutInitialSlash
-    .replace(/ /g, '-')
-    .replace(/[^\w/-]+/g, '')
-    .toLowerCase()}`
-}
-
-const isObject = (val: unknown): val is Record<string, unknown> =>
-  typeof val === 'object' && val !== null
-
-export const FormatSlug =
+export const useFormatSlug =
   (fallback: string): FieldHook =>
-  ({ data, operation, originalDoc, value }) => {
+  ({ data, operation, value }) => {
     if (typeof value === 'string') {
-      return format(value)
+      return formatSlug(value)
     }
 
-    if (operation === 'create') {
-      const docFallback =
-        isObject(data) &&
-        fallback in data &&
-        data[fallback] &&
-        typeof data[fallback] === 'string'
-          ? data[fallback]
-          : undefined
-
-      const originalDocFallback =
-        isObject(originalDoc) &&
-        fallback in originalDoc &&
-        originalDoc[fallback] &&
-        typeof originalDoc[fallback] === 'string'
-          ? originalDoc[fallback]
-          : undefined
-
-      const fallbackData = docFallback ?? originalDocFallback
-
-      if (fallbackData && typeof fallbackData === 'string') {
-        return format(fallbackData)
-      }
+    if (
+      data &&
+      (operation === 'create' || !data.slug) &&
+      fallback &&
+      fallback in data &&
+      typeof data[fallback] === 'string'
+    ) {
+      return formatSlug(data[fallback])
     }
 
-    return `${value}`
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return value
   }
