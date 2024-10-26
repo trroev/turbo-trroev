@@ -1,13 +1,13 @@
-// eslint-disable-next-line import/no-unresolved
+import { type NextConfig } from 'next'
 import { withPayload } from '@payloadcms/next/withPayload'
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-
+const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+
+  reactStrictMode: true,
 
   typescript: {
     ignoreBuildErrors: true,
