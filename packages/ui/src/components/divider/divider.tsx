@@ -3,7 +3,7 @@
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
-  type ElementRef,
+  type ComponentRef,
 } from 'react'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
@@ -15,7 +15,7 @@ type DividerProps = ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> &
   DividerVariantProps
 
 const Divider = forwardRef<
-  ElementRef<typeof SeparatorPrimitive.Root>,
+  ComponentRef<typeof SeparatorPrimitive.Root>,
   DividerProps
 >(({ className, decorative = true, orientation, ...props }, ref) => (
   <SeparatorPrimitive.Root
