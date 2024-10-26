@@ -46,7 +46,7 @@
     "topo": {
       "dependsOn": ["^topo"]
     },
-    "type-check": {
+    "typecheck": {
       "dependsOn": ["^topo"],
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     }
