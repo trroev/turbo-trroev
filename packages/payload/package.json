@@ -1,0 +1,76 @@
+{
+  "name": "@trroev/payload",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts",
+    "./access/*": "./src/access/*/index.ts",
+    "./blocks/*": "./src/blocks/*/index.ts",
+    "./collections/*": "./src/collections/*/index.ts",
+    "./components/*": "./src/components/*/index.ts",
+    "./fields/*": "./src/fields/*/index.ts",
+    "./helpers/*": "./src/helpers/*/index.ts",
+    "./hooks/*": "./src/hooks/*/index.ts",
+    "./plugins/*": "./src/plugins/*/index.ts",
+    "./payload-types": "./src/payload.types.ts",
+    "./payload-config": "./src/payload.config.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules .pnpm-lock.yaml",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ./.prettierignore",
+    "generate:types": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types",
+    "lint": "eslint .",
+    "reinstall": "pnpm clean && pnpm i",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@trroev/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@trroev/eslint-config/react"
+    ],
+    "ignorePatterns": [
+      "src/payload.types.ts"
+    ],
+    "root": true
+  },
+  "dependencies": {
+    "@payloadcms/db-mongodb": "3.0.0-beta.111",
+    "@payloadcms/db-sqlite": "3.0.0-beta.111",
+    "@payloadcms/graphql": "3.0.0-beta.111",
+    "@payloadcms/live-preview-react": "3.0.0-beta.111",
+    "@payloadcms/plugin-nested-docs": "3.0.0-beta.111",
+    "@payloadcms/plugin-redirects": "3.0.0-beta.111",
+    "@payloadcms/plugin-seo": "3.0.0-beta.111",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.111",
+    "@payloadcms/ui": "3.0.0-beta.111",
+    "@trroev/env": "workspace:*",
+    "@trroev/ui": "workspace:*",
+    "@trroev/utils": "workspace:*",
+    "payload": "3.0.0-beta.111",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15",
+    "sharp": "^0.33.4",
+    "ts-pattern": "^5.3.1"
+  },
+  "devDependencies": {
+    "@trroev/eslint-config": "workspace:*",
+    "@trroev/prettier-config": "workspace:*",
+    "@trroev/tsconfig": "workspace:*",
+    "@trroev/types": "workspace:*",
+    "@types/react": "catalog:next14or15",
+    "eslint": "^8.57.0",
+    "npm-watch": "^0.13.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2"
+  },
+  "watch": {
+    "generate:types": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts,tsx",
+      "quiet": false
+    }
+  }
+}

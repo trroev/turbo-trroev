@@ -1,6 +1,7 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '../button'
+import { Button } from '@trroev/ui/button'
+
 import {
   Dialog,
   DialogClose,
