@@ -50,8 +50,8 @@
     "payload": "3.0.0-beta.119",
     "react": "catalog:next15",
     "react-dom": "catalog:next15",
-    "sharp": "^0.33.4",
-    "ts-pattern": "^5.3.1"
+    "sharp": "^0.33.5",
+    "ts-pattern": "^5.5.0"
   },
   "devDependencies": {
     "@trroev/eslint-config": "workspace:*",
@@ -59,10 +59,10 @@
     "@trroev/tsconfig": "workspace:*",
     "@trroev/types": "workspace:*",
     "@types/react": "catalog:next15",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "npm-watch": "^0.13.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   },
   "watch": {
     "generate:types": {
