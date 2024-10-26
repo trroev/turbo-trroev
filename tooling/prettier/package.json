@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@trroev/tsconfig": "workspace:*",
+    "@types/node": "^20.16.13",
     "typescript": "^5.6.3"
   }
 }

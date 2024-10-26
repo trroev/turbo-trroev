@@ -3,7 +3,7 @@
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
-  type ElementRef,
+  type ComponentRef,
 } from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 
@@ -27,7 +27,7 @@ type AvatarFallbackProps = ComponentPropsWithoutRef<
 >
 
 const AvatarImage = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Image>,
+  ComponentRef<typeof AvatarPrimitive.Image>,
   AvatarImageProps
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Image
@@ -39,7 +39,7 @@ const AvatarImage = forwardRef<
 AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
 const AvatarFallback = forwardRef<
-  ElementRef<typeof AvatarPrimitive.Fallback>,
+  ComponentRef<typeof AvatarPrimitive.Fallback>,
   AvatarFallbackProps
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
@@ -53,18 +53,19 @@ const AvatarFallback = forwardRef<
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-const Avatar = forwardRef<ElementRef<typeof AvatarPrimitive.Root>, AvatarProps>(
-  ({ className, fallback, img, radius, size, ...props }, ref) => (
-    <AvatarPrimitive.Root
-      ref={ref}
-      className={cn(avatarVariants({ radius, size, className }))}
-      {...props}
-    >
-      {img && <AvatarImage src={img.src} alt={img.alt} />}
-      <AvatarFallback>{fallback}</AvatarFallback>
-    </AvatarPrimitive.Root>
-  ),
-)
+const Avatar = forwardRef<
+  ComponentRef<typeof AvatarPrimitive.Root>,
+  AvatarProps
+>(({ className, fallback, img, radius, size, ...props }, ref) => (
+  <AvatarPrimitive.Root
+    ref={ref}
+    className={cn(avatarVariants({ radius, size, className }))}
+    {...props}
+  >
+    {img && <AvatarImage src={img.src} alt={img.alt} />}
+    <AvatarFallback>{fallback}</AvatarFallback>
+  </AvatarPrimitive.Root>
+))
 Avatar.displayName = AvatarPrimitive.Root.displayName
 
 export { Avatar, AvatarImage, AvatarFallback }

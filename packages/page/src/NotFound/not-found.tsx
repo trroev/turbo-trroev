@@ -14,7 +14,7 @@ const metadata: Metadata = {
   title: 'Page Not Found',
 }
 
-const NotFoundPage = () => (
+const NotFound = () => (
   <main className="flex grow flex-col items-center justify-center">
     <Card className="min-w-60 sm:min-w-80">
       <CardHeader>
@@ -36,4 +36,4 @@ const NotFoundPage = () => (
   </main>
 )
 
-export { NotFoundPage, metadata }
+export { NotFound, metadata }

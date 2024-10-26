@@ -10,11 +10,11 @@ const config: NextConfig = {
 
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
-    '@local/icons',
-    '@local/layout',
-    '@local/page',
-    '@local/svg',
-    '@local/ui',
+    '@trroev/icons',
+    '@trroev/layout',
+    '@trroev/page',
+    '@trroev/svg',
+    '@trroev/ui',
   ],
 }
 
