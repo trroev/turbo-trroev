@@ -1,53 +1,70 @@
 {
-  "name": "@shared/ui",
+  "name": "@trroev/ui",
   "version": "0.1.0",
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    "./cn": "./src/utils/cn.ts",
-    "./*": "./src/components/*/index.ts",
-    "./postcss": "./postcss.config.js",
-    "./styles": "./src/styles/index.css"
-  },
+  "private": true,
   "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./*": "./src/components/*/index.ts",
+    "./cn": "./src/utils/cn.ts",
+    "./icons/*": "./src/icons/*/*.tsx",
+    "./postcss": "./postcss.config.js",
+    "./styles.css": "./src/styles/index.css"
+  },
   "scripts": {
     "add": "pnpm dlx shadcn-ui@latest add",
     "clean": "rm -rf .turbo node_modules",
-    "build": "tailwindcss -i ./src/styles/styles.css -o ./src/styles/index.css",
-    "lint": "eslint src/",
-    "dev": "tailwindcss -i ./src/styles/styles.css -o ./src/styles/index.css --watch",
-    "type-check": "tsc --noEmit"
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ./.prettierignore",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:report": "eslint src/ --format json --output-file ../../lint-results/ui.json",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
-  "dependencies": {
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.4.0"
-  },
-  "devDependencies": {
-    "@shared/eslint-config": "workspace:*",
-    "@shared/tailwind-config": "workspace:*",
-    "@shared/typescript-config": "workspace:*",
-    "@types/react": "^18.2.61",
-    "autoprefixer": "^10.4.18",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
-    "react": "^18.3.1"
-  },
+  "prettier": "@trroev/prettier-config",
   "eslintConfig": {
-    "root": true,
     "extends": [
-      "@shared/eslint-config/base",
-      "@shared/eslint-config/react"
+      "@trroev/eslint-config/base",
+      "@trroev/eslint-config/react"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "./src/components/**/*.stories.tsx"
+        ],
+        "rules": {
+          "jsx-a11y/anchor-is-valid": "off"
+        }
+      }
     ],
     "ignorePatterns": [
       "turbo/**"
-    ]
+    ],
+    "root": true
   },
-  "prettier": "@shared/prettier-config"
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@axa-ch/react-polymorphic-types": "^1.2.6",
+    "@storybook/react": "^8.3.6",
+    "@trroev/eslint-config": "workspace:*",
+    "@trroev/tailwind-config": "workspace:*",
+    "@trroev/tsconfig": "workspace:*",
+    "@types/react": "catalog:next15",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  }
 }

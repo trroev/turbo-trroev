@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "paths": {
+      "@trroev/env/*": ["src/*.ts"],
+      "@trroev/env/helpers/*": ["src/helpers/*.ts"]
+    },
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "exclude": ["node_modules"],
+  "extends": "@trroev/tsconfig/base.json",
+  "include": ["*.ts", "src"]
+}

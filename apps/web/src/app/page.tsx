@@ -1,9 +1,9 @@
-/* eslint-disable react/function-component-definition */
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@shared/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@trroev/ui/card'
 
-function Gradient({
+const Gradient = ({
   conic,
   className,
   small,
@@ -11,7 +11,7 @@ function Gradient({
   small?: boolean
   conic?: boolean
   className?: string
-}): JSX.Element {
+}): JSX.Element => {
   return (
     <span
       className={`absolute rounded-[100%] mix-blend-normal will-change-[filter] ${
@@ -45,7 +45,7 @@ const LINKS = [
   },
 ]
 
-export default function Page(): JSX.Element {
+const Page = (): JSX.Element => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -122,15 +122,19 @@ export default function Page(): JSX.Element {
       </div>
 
       <div className="mb-32 grid gap-4 text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        {LINKS.map(({ title, description }) => (
-          <Card key={title}>
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
-            </CardHeader>
-            <CardContent>{description}</CardContent>
-          </Card>
+        {LINKS.map(({ title, description, href }) => (
+          <Link key={href} href={href}>
+            <Card>
+              <CardHeader>
+                <CardTitle>{title}</CardTitle>
+              </CardHeader>
+              <CardContent>{description}</CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
     </main>
   )
 }
+
+export default Page

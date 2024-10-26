@@ -1,3 +1,12 @@
 packages:
-  - "apps/*"
-  - "packages/*"
+  - apps/*
+  - packages/*
+  - tooling/*
+
+catalogs:
+  next15:
+    next: ^15.0.1
+    react: ^19.0.0-rc-65a56d0e-20241020
+    react-dom: ^19.0.0-rc-65a56d0e-20241020
+    '@types/react': npm:types-react@19.0.0-rc.0
+    '@types/react-dom': npm:types-react-dom@19.0.0-rc.0

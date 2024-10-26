@@ -1,26 +1,50 @@
 {
   "name": "turbo-trroev",
   "private": true,
-  "engines": {
-    "node": ">=20.11.1",
-    "pnpm": ">=8.12.0"
-  },
-  "packageManager": "pnpm@8.15.6",
   "scripts": {
     "build": "turbo build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
     "dev": "turbo dev",
+    "dev:payload": "turbo dev --filter=payload...",
     "dev:web": "turbo dev --filter=web...",
-    "lint": "turbo lint",
-    "type-check": "turbo type-check",
-    "clean": "turbo clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "turbo format --continue -- --cache --cache-location node_modules/.cache/.prettiercache",
+    "format:fix": "turbo format --continue -- --write --cache --cache-location node_modules/.cache/.prettiercache",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm lint:ws",
+    "lint": "turbo lint --continue -- --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:ws": "pnpm dlx sherif@latest",
+    "packages:check": "npm-check-updates",
+    "packages:sync": "syncpack",
+    "packages:update": "npm-check-updates -u && pnpm i",
+    "prepare": "husky",
     "storybook": "turbo storybook",
-    "storybook:ui": "turbo storybook --filter=ui",
-    "build-storybook": "turbo build-storybook"
+    "typecheck": "turbo typecheck"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@trroev/prettier-config",
   "devDependencies": {
-    "@shared/prettier-config": "workspace:*",
-    "turbo": "^2.0.9"
+    "@trroev/prettier-config": "workspace:*",
+    "@turbo/gen": "^2.2.3",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "npm-check-updates": "^17.1.4",
+    "prettier": "^3.3.3",
+    "syncpack": "^13.0.0",
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3"
   },
-  "prettier": "@shared/prettier-config"
+  "packageManager": "pnpm@9.10.0+sha256.355a8ab8dbb6ad41befbef39bc4fd6b5df85e12761d2724bd01f13e878de4b13",
+  "engines": {
+    "node": ">=20.11.1"
+  }
 }

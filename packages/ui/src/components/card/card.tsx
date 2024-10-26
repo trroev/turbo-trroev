@@ -1,14 +1,18 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 
-import { cn } from '@shared/ui/cn'
+import { cn } from '@trroev/ui/cn'
+import { Heading } from '@trroev/ui/Heading'
 
-const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
+import { cardVariants, type CardVariantProps } from './card.variants'
+
+type CardProps = HTMLAttributes<HTMLDivElement> & CardVariantProps
+
+const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ className, isBlurred, radius, shadow, variant, ...props }, ref) => (
     <div
       ref={ref}
       className={cn(
-        'bg-card text-card-foreground rounded-lg border shadow-sm',
-        className,
+        cardVariants({ variant, isBlurred, radius, shadow, className }),
       )}
       {...props}
     />
@@ -31,16 +35,9 @@ const CardTitle = forwardRef<
   HTMLParagraphElement,
   HTMLAttributes<HTMLHeadingElement>
 >(({ children, className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      'text-2xl font-semibold leading-none tracking-tight',
-      className,
-    )}
-    {...props}
-  >
+  <Heading as="h3" ref={ref} className={cn(className)} {...props}>
     {children}
-  </h3>
+  </Heading>
 ))
 CardTitle.displayName = 'CardTitle'
 
@@ -50,7 +47,7 @@ const CardDescription = forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn('text-muted-foreground text-sm', className)}
+    className={cn('text-sm text-muted-foreground', className)}
     {...props}
   />
 ))
@@ -75,3 +72,4 @@ const CardFooter = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 CardFooter.displayName = 'CardFooter'
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export type { CardProps }

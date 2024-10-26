@@ -1,19 +1,55 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env", "**/.env.development", "**/.env.prod"],
+  "globalEnv": [
+    "CI",
+    "NODE_ENV",
+    "NEXT_PUBLIC_PAYLOAD_URL",
+    "NEXT_PUBLIC_SITE_URL",
+    "PAYLOAD_PRIVATE_DATABASE_URI",
+    "PAYLOAD_PRIVATE_SECRET",
+    "PAYLOAD_PRIVATE_REVALIDATION_KEY",
+    "SKIP_ENV_VALIDATION",
+    "npm_lifecycle_event"
+  ],
+  "remoteCache": {
+    "enabled": true
+  },
   "tasks": {
+    "//#clean": {
+      "cache": false
+    },
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
-    "lint": {},
-    "type-check": {},
+    "clean": {
+      "cache": false
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "clean": {
-      "cache": false
+    "format": {
+      "outputLogs": "new-only",
+      "outputs": ["node_modules/.cache/.prettiercache"]
+    },
+    "lint": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/.eslintcache"]
+    },
+    "storybook": {
+      "cache": true,
+      "persistent": true
+    },
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "typecheck": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     }
-  }
+  },
+  "ui": "stream"
 }
