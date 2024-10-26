@@ -1,3 +1,5 @@
+import ContainerQueries from '@tailwindcss/container-queries'
+import TailwindCSSAnimate from 'tailwindcss-animate'
 import { type Config } from 'tailwindcss/types/config'
 
 import { colors } from './colors'
@@ -9,6 +11,7 @@ export const ExtendedConfig = {
 export default {
   content: ['./src/**/*.{ts,tsx}'],
   darkMode: ['class', '[data-mode="dark"]'],
+  plugins: [ContainerQueries, TailwindCSSAnimate],
   theme: {
     extend: {
       ...ExtendedConfig,

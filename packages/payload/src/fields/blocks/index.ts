@@ -2,11 +2,7 @@ import { deepMerge, type Field } from 'payload'
 
 type BlocksField = (overrides?: Partial<Field>) => Field
 
-export const blocks = [
-  // BannerBlock,
-  // AccordionBlock,
-  // TextSectionBreakBlock
-]
+export const blocks = []
 
 export const blocksField: BlocksField = (overrides = {}) =>
   deepMerge<Field, Partial<Field>>(

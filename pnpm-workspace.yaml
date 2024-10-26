@@ -4,20 +4,9 @@ packages:
   - tooling/*
 
 catalogs:
-  next14:
-    next: ^14.2.5
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    '@types/react': ^18.3.4
-
   next15:
-    next: 15.0.0-canary.173
-    react: 19.0.0-rc-3edc000d-20240926
-    react-dom: 19.0.0-rc-3edc000d-20240926
-    '@types/react': npm:types-react-dom@19.0.0-rc.0
-
-  next14or15:
-    next: ^14.2.5 || 15.0.0-canary.173
-    react: ^18.3.1 || 19.0.0-rc-3edc000d-20240926
-    react-dom: ^18.3.1 || 19.0.0-rc-3edc000d-20240926
-    '@types/react': ^18.3.4 || npm:types-react-dom@19.0.0-rc.0
+    next: ^15.0.0
+    react: ^19.0.0-rc-65a56d0e-20241020
+    react-dom: ^19.0.0-rc-65a56d0e-20241020
+    '@types/react': npm:types-react@19.0.0-rc.0
+    '@types/react-dom': npm:types-react-dom@19.0.0-rc.0

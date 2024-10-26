@@ -8,10 +8,10 @@ import config from '@trroev/payload/payload-config'
 import { ContentPagePreview } from './content-page-preview'
 
 type ContentPageProps = {
-  params: { slug?: string[] }
-  searchParams: {
+  params: Promise<{ slug?: string[] }>
+  searchParams: Promise<{
     isLivePreview?: string
-  }
+  }>
 }
 
 const getPage = cache(async (slug?: string[], isLivePreview?: boolean) => {
@@ -34,9 +34,11 @@ const getPages = cache(async () => {
 })
 
 export const generateMetadata = async ({
-  params: { slug },
-  searchParams: { isLivePreview },
+  params,
+  searchParams,
 }: ContentPageProps): Promise<Metadata> => {
+  const { slug } = await params
+  const { isLivePreview } = await searchParams
   const page = await getPage(slug, Boolean(isLivePreview))
 
   if (!page?.meta) {
@@ -47,7 +49,7 @@ export const generateMetadata = async ({
 }
 
 export const generateStaticParams = async (): Promise<
-  NonNullable<ContentPageProps['params']>[]
+  Awaited<NonNullable<ContentPageProps['params']>>[]
 > => {
   const pages = await getPages()
 
@@ -59,9 +61,11 @@ export const generateStaticParams = async (): Promise<
 }
 
 export const ContentPage: FC<ContentPageProps> = async ({
-  params: { slug },
-  searchParams: { isLivePreview },
+  params,
+  searchParams,
 }) => {
+  const { slug } = await params
+  const { isLivePreview } = await searchParams
   const page = await getPage(slug, Boolean(isLivePreview))
 
   if (!page) {

@@ -20,16 +20,18 @@
     "root": true
   },
   "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.10"
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@trroev/eslint-config": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   }
 }
