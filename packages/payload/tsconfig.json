@@ -10,6 +10,7 @@
       "@trroev/payload/collections/*": ["./src/collections/*"],
       "@trroev/payload/components/*": ["./src/components/*"],
       "@trroev/payload/fields/*": ["./src/fields/*"],
+      "@trroev/payload/globals/*": ["./src/globals/*"],
       "@trroev/payload/helpers/*": ["./src/helpers/*"],
       "@trroev/payload/hooks/*": ["./src/hooks/*"],
       "@trroev/payload/payload-config": ["./src/payload.config"],
@@ -19,6 +20,5 @@
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "exclude": ["node_modules", "src/payload.types.ts", ".next"],
-  "extends": "@trroev/tsconfig/base.json",
-  "include": ["*.ts", "./src"]
+  "extends": "@trroev/tsconfig/base.json"
 }

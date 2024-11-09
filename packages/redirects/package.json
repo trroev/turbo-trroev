@@ -1,6 +1,6 @@
 {
   "name": "@trroev/redirects",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -14,12 +14,6 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@trroev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@trroev/eslint-config/base"
-    ],
-    "root": true
-  },
   "dependencies": {
     "@trroev/types": "workspace:*",
     "next": "catalog:next15",

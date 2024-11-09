@@ -3,8 +3,11 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "ES2022"],
+    "paths": {
+      "@trroev/seo/*": ["src/*/index.ts"]
+    },
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "exclude": ["node_modules"],
-  "extends": "@trroev/tsconfig/base.json"
+  "extends": "@trroev/tsconfig/internal-package.json"
 }

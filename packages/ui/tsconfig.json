@@ -5,12 +5,13 @@
     "lib": ["dom", "dom.iterable", "ES2022"],
     "paths": {
       "@trroev/ui/*": ["src/components/*/index.ts"],
-      "@trroev/ui/cn": ["src/utils/cn.ts"],
-      "@trroev/ui/types/*": ["src/types/*"]
+      "@trroev/ui/cn": ["src/utils/cn/index.ts"],
+      "@trroev/ui/hooks/*": ["src/hooks/*/index.ts"],
+      "@trroev/ui/types/*": ["src/types/*/index.ts"],
+      "@trroev/ui/utils/*": ["src/utils/*/index.ts"]
     },
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "exclude": ["node_modules"],
-  "extends": "@trroev/tsconfig/internal-package.json",
-  "include": ["*.ts", "src"]
+  "extends": "@trroev/tsconfig/internal-package.json"
 }

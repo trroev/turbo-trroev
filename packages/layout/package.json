@@ -14,20 +14,13 @@
     "typecheck": "tsc --noEmit"
   },
   "prettier": "@trroev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@trroev/eslint-config/base",
-      "@trroev/eslint-config/react"
-    ],
-    "root": true
-  },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
     "@trroev/ui": "workspace:*",
     "next": "catalog:next15"
   },
   "devDependencies": {
-    "@storybook/react": "^8.3.6",
+    "@storybook/react": "^8.4.2",
     "@trroev/eslint-config": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",

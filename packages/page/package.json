@@ -1,6 +1,6 @@
 {
   "name": "@trroev/page",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -14,13 +14,6 @@
     "typecheck": "tsc --noEmit"
   },
   "prettier": "@trroev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@trroev/eslint-config/base",
-      "@trroev/eslint-config/react"
-    ],
-    "root": true
-  },
   "dependencies": {
     "@payloadcms/live-preview-react": "3.0.0-beta.126",
     "@payloadcms/next": "3.0.0-beta.126",
@@ -31,7 +24,7 @@
     "payload": "3.0.0-beta.126"
   },
   "devDependencies": {
-    "@storybook/react": "^8.3.6",
+    "@storybook/react": "^8.4.2",
     "@trroev/eslint-config": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
