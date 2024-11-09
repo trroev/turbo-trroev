@@ -9,12 +9,11 @@ import {
   useFieldProps,
   useFormFields,
 } from '@payloadcms/ui'
+import { type TextFieldClientProps } from 'payload'
 
 import { formatSlug } from '@trroev/payload/helpers/formatSlug'
 
 import './index.scss'
-
-import { type TextFieldClientProps } from 'payload'
 
 type SlugFieldProps = {
   checkboxFieldPath: string

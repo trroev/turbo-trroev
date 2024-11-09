@@ -84,7 +84,6 @@ export interface Page {
 export interface Media {
   id: string;
   alt: string;
-  pathname?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -104,7 +103,6 @@ export interface Media {
 export interface User {
   id: string;
   role: 'user' | 'admin';
-  pathname?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;

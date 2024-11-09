@@ -59,7 +59,7 @@
     "@trroev/tsconfig": "workspace:*",
     "@trroev/types": "workspace:*",
     "@types/react": "catalog:next15",
-    "eslint": "^8.57.1",
+    "eslint": "^9.14.0",
     "npm-watch": "^0.13.0",
     "prettier": "^3.3.3",
     "typescript": "^5.6.3"

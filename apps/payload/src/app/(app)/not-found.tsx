@@ -1,5 +1,1 @@
-import { metadata, NotFound } from '@trroev/page/NotFound'
-
-export { metadata }
-
-export default NotFound
+export { metadata, NotFound as default } from '@trroev/page/NotFound'

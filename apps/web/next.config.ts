@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 import { type NextConfig } from 'next'
 import createJiti from 'jiti'
 
