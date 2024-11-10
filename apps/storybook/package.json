@@ -1,23 +1,16 @@
 {
   "name": "storybook",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "storybook build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "storybook": "storybook dev -p 6006"
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint .",
+    "storybook": "storybook dev -p 6006",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@trroev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@trroev/eslint-config/base",
-      "@trroev/eslint-config/react"
-    ],
-    "ignorePatterns": [
-      "sst-env.d.ts"
-    ],
-    "root": true
-  },
   "dependencies": {
     "@storybook/addon-docs": "^8.3.6",
     "@storybook/blocks": "^8.3.6",

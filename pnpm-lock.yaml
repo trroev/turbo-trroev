@@ -329,6 +329,9 @@ importers:
       '@trroev/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@trroev/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
       '@trroev/prettier-config':
         specifier: workspace:*
         version: link:../../tooling/prettier
@@ -390,6 +393,46 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+
+  packages/icons:
+    dependencies:
+      lucide-react:
+        specifier: ^0.454.0
+        version: 0.454.0(react@19.0.0-rc-fb9a90fa48-20240614)
+      react:
+        specifier: catalog:next15
+        version: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom:
+        specifier: catalog:next15
+        version: 19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614)
+    devDependencies:
+      '@storybook/react':
+        specifier: ^8.4.2
+        version: 8.4.2(@storybook/test@8.3.6(storybook@8.3.6))(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.3.6)(typescript@5.6.3)
+      '@trroev/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@trroev/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@trroev/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      '@types/react':
+        specifier: catalog:next15
+        version: types-react@19.0.0-rc.0
+      eslint:
+        specifier: ^9.14.0
+        version: 9.14.0(jiti@1.21.6)
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
+      tailwindcss:
+        specifier: ^3.4.14
+        version: 3.4.14(ts-node@10.9.2(@types/node@22.8.1)(typescript@5.6.3))
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -715,6 +758,9 @@ importers:
       '@trroev/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@trroev/icons':
+        specifier: workspace:*
+        version: link:../icons
       '@trroev/prettier-config':
         specifier: workspace:*
         version: link:../../tooling/prettier
@@ -7013,6 +7059,11 @@ packages:
   lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
+
+  lucide-react@0.454.0:
+    resolution: {integrity: sha512-hw7zMDwykCLnEzgncEEjHeA6+45aeEzRYuKHuyRSOPkhko+J3ySGjGIzu+mmMfDFG1vazHepMaYFYHbTFAZAAQ==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
@@ -17137,6 +17188,10 @@ snapshots:
       yallist: 3.1.1
 
   lru-cache@7.18.3: {}
+
+  lucide-react@0.454.0(react@19.0.0-rc-fb9a90fa48-20240614):
+    dependencies:
+      react: 19.0.0-rc-fb9a90fa48-20240614
 
   lz-string@1.5.0: {}
 

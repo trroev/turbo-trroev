@@ -1,4 +1,5 @@
-import { deepMerge, type CheckboxField } from 'payload'
+import {  deepMerge } from 'payload'
+import type {CheckboxField} from 'payload';
 
 type HideFromIndexingField = (
   overrides?: Partial<CheckboxField>,

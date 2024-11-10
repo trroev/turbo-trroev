@@ -1,11 +1,11 @@
-import { cache, type FC } from 'react'
-import { type Metadata } from 'next'
+import type { Metadata } from 'next'
+import type { FC } from 'react'
+import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
-
 import config from '@trroev/payload/payload-config'
 
-import { ContentPagePreview } from './content-page-preview'
+import { ContentPagePreview } from './ContentPagePreview'
 
 type ContentPageProps = {
   params: Promise<{ slug?: string[] }>

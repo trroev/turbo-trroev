@@ -1,13 +1,12 @@
-import { type Metadata } from 'next'
-
-import { Button } from '@trroev/ui/button'
+import type { Metadata } from 'next'
+import { Button } from '@trroev/ui/Button'
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@trroev/ui/card'
+} from '@trroev/ui/Card'
 import { Heading } from '@trroev/ui/Heading'
 
 const metadata: Metadata = {
@@ -36,4 +35,4 @@ const NotFound = () => (
   </main>
 )
 
-export { NotFound, metadata }
+export { metadata, NotFound }

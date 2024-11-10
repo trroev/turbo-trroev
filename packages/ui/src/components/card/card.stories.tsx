@@ -1,7 +1,7 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from '@trroev/ui/Button'
 
-import { Button } from '@trroev/ui/button'
-
+import type { CardProps } from './Card'
 import {
   Card,
   CardContent,
@@ -9,35 +9,34 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  type CardProps,
-} from './card'
+} from './Card'
 
 const meta: Meta<typeof Card> = {
-  title: 'Card',
-  component: Card,
+  args: {
+    isBlurred: false,
+    radius: 'lg',
+    shadow: 'sm',
+    variant: 'default',
+  },
   argTypes: {
-    variant: {
-      options: ['default', 'withBackgroundImage'],
-      control: { type: 'radio' },
-    },
     isBlurred: {
       control: { type: 'boolean' },
     },
     radius: {
-      options: ['none', 'sm', 'md', 'lg'],
       control: { type: 'radio' },
+      options: ['none', 'sm', 'md', 'lg'],
     },
     shadow: {
-      options: ['none', 'sm', 'md', 'lg'],
       control: { type: 'radio' },
+      options: ['none', 'sm', 'md', 'lg'],
+    },
+    variant: {
+      control: { type: 'radio' },
+      options: ['default', 'withBackgroundImage'],
     },
   },
-  args: {
-    variant: 'default',
-    isBlurred: false,
-    radius: 'lg',
-    shadow: 'sm',
-  },
+  component: Card,
+  title: 'Card',
 }
 
 export default meta
@@ -97,8 +96,8 @@ export const WithBackgroundImage: Story = {
     <Card {...args} className="w-[350px]">
       <img
         alt="Card background"
-        src="https://picsum.photos/200/300"
         className="absolute inset-0 z-0 size-full object-cover brightness-[0.4]"
+        src="https://picsum.photos/200/300"
       />
       <div className="relative z-10">
         <CardHeader>
@@ -125,8 +124,8 @@ export const WithBodyImage: Story = {
       <CardContent className="flex justify-center">
         <img
           alt="Card background"
-          src="https://picsum.photos/200/300"
           className="w-full rounded object-cover object-center"
+          src="https://picsum.photos/200/300"
         />
       </CardContent>
       <CardFooter className="flex justify-between">

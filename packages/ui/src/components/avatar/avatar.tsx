@@ -1,24 +1,21 @@
 'use client'
 
-import {
-  forwardRef,
-  type ComponentPropsWithoutRef,
-  type ComponentRef,
-} from 'react'
+import type { ComponentPropsWithoutRef, ComponentRef } from 'react'
+import { forwardRef } from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
-
 import { cn } from '@trroev/ui/cn'
 
-import { avatarVariants, type AvatarVariantProps } from './avatar.variants'
+import type { AvatarVariantProps } from './Avatar.variants'
+import { avatarVariants } from './Avatar.variants'
 
 type AvatarProps = {
-  img?: {
-    src: string
-    alt: string
-  }
   fallback: string
-} & ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
-  AvatarVariantProps
+  img?: {
+    alt: string
+    src: string
+  }
+} & AvatarVariantProps &
+  ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 
 type AvatarImageProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 
@@ -31,8 +28,8 @@ const AvatarImage = forwardRef<
   AvatarImageProps
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Image
-    ref={ref}
     className={cn('aspect-square size-full', className)}
+    ref={ref}
     {...props}
   />
 ))
@@ -43,11 +40,11 @@ const AvatarFallback = forwardRef<
   AvatarFallbackProps
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
-    ref={ref}
     className={cn(
       'flex size-full items-center justify-center rounded-full bg-muted',
       className,
     )}
+    ref={ref}
     {...props}
   />
 ))
@@ -58,15 +55,15 @@ const Avatar = forwardRef<
   AvatarProps
 >(({ className, fallback, img, radius, size, ...props }, ref) => (
   <AvatarPrimitive.Root
+    className={cn(avatarVariants({ className, radius, size }))}
     ref={ref}
-    className={cn(avatarVariants({ radius, size, className }))}
     {...props}
   >
-    {img && <AvatarImage src={img.src} alt={img.alt} />}
+    {img && <AvatarImage alt={img.alt} src={img.src} />}
     <AvatarFallback>{fallback}</AvatarFallback>
   </AvatarPrimitive.Root>
 ))
 Avatar.displayName = AvatarPrimitive.Root.displayName
 
-export { Avatar, AvatarImage, AvatarFallback }
-export type { AvatarProps, AvatarImageProps, AvatarFallbackProps }
+export { Avatar, AvatarFallback, AvatarImage }
+export type { AvatarFallbackProps, AvatarImageProps, AvatarProps }

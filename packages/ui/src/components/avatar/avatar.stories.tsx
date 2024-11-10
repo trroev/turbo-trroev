@@ -1,35 +1,36 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Avatar, type AvatarProps } from './avatar'
+import type { AvatarProps } from './Avatar'
+import { Avatar } from './Avatar'
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Avatar',
-  component: Avatar,
-  argTypes: {
-    img: {
-      control: { type: 'object' },
-    },
-    fallback: {
-      control: { type: 'text' },
-    },
-    radius: {
-      options: ['none', 'sm', 'md', 'lg', 'full'],
-      control: { type: 'select' },
-    },
-    size: {
-      options: ['xs', 'sm', 'md', 'lg', 'xl'],
-      control: { type: 'select' },
-    },
-  },
   args: {
-    img: {
-      src: 'https://github.com/trroev.png',
-      alt: 'trroev',
-    },
     fallback: 'TM',
+    img: {
+      alt: 'trroev',
+      src: 'https://github.com/trroev.png',
+    },
     radius: 'full',
     size: 'md',
   },
+  argTypes: {
+    fallback: {
+      control: { type: 'text' },
+    },
+    img: {
+      control: { type: 'object' },
+    },
+    radius: {
+      control: { type: 'select' },
+      options: ['none', 'sm', 'md', 'lg', 'full'],
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
+  },
+  component: Avatar,
+  title: 'Avatar',
 }
 
 export default meta
@@ -43,8 +44,8 @@ export const Default: Story = {
 export const BrokenImage: Story = {
   args: {
     img: {
-      src: 'https://broken.link.com/broken-pic.jpg',
       alt: 'broken-pic',
+      src: 'https://broken.link.com/broken-pic.jpg',
     },
   },
 

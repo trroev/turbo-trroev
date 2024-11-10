@@ -1,6 +1,5 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-
-import { Button } from '@trroev/ui/button'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from '@trroev/ui/Button'
 
 import {
   Dialog,
@@ -11,11 +10,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './dialog'
+} from './Dialog'
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Dialog',
   component: Dialog,
+  title: 'Dialog',
 }
 
 export default meta

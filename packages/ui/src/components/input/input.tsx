@@ -1,18 +1,19 @@
-import { forwardRef, type InputHTMLAttributes } from 'react'
-
+import type { InputHTMLAttributes } from 'react'
+import { forwardRef } from 'react'
 import { cn } from '@trroev/ui/cn'
 
-import { inputVariants, type InputVariantProps } from './input.variants'
+import type { InputVariantProps } from './Input.variants'
+import { inputVariants } from './Input.variants'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & InputVariantProps
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, radius, ...props }, ref) => {
+  ({ className, radius, type, ...props }, ref) => {
     return (
       <input
-        type={type}
-        className={cn(inputVariants({ radius, className }))}
+        className={cn(inputVariants({ className, radius }))}
         ref={ref}
+        type={type}
         {...props}
       />
     )

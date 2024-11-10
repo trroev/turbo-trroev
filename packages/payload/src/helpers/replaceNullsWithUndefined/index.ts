@@ -19,9 +19,9 @@ export function replaceNullsWithUndefined<
 
   const newObj: Record<string, unknown> = {}
 
-  Object.keys(obj).forEach(key => {
+  for (const key of Object.keys(obj)) {
     if (typeof obj !== 'object') {
-      return
+      continue
     }
 
     const value = obj[key]
@@ -29,13 +29,14 @@ export function replaceNullsWithUndefined<
     if (value === null) {
       newObj[key] = undefined
     } else if (Array.isArray(value)) {
-      newObj[key] = value.map(replaceNullsWithUndefined)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      newObj[key] = value.map(element => replaceNullsWithUndefined(element))
     } else if (isObject(value)) {
       newObj[key] = replaceNullsWithUndefined(value)
     } else {
       newObj[key] = value
     }
-  })
+  }
 
   return newObj as RecursivelyReplaceNullWithUndefined<T>
 }

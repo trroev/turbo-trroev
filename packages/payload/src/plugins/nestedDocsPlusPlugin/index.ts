@@ -1,10 +1,5 @@
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
-import {
-  type CollectionBeforeChangeHook,
-  type CollectionSlug,
-  type Config,
-  type Plugin,
-} from 'payload'
+import type {CollectionBeforeChangeHook, CollectionSlug, Config, Plugin} from 'payload';
 
 import { isObject } from '@trroev/utils/isObject'
 
@@ -15,14 +10,14 @@ const setPathnameHook: CollectionBeforeChangeHook = ({ data }) => {
     Array.isArray(data.breadcrumbs)
   ) {
     const lastBreadcrumb: unknown =
-      data.breadcrumbs[data.breadcrumbs.length - 1]
+      data.breadcrumbs.at(-1)
 
     if (
       isObject(lastBreadcrumb) &&
       'url' in lastBreadcrumb &&
       typeof lastBreadcrumb.url === 'string'
     ) {
-      data.pathname = lastBreadcrumb.url.replace(/^\/*/g, '/')
+      data.pathname = lastBreadcrumb.url.replaceAll(/^\/*/g, '/')
     }
   }
 }
@@ -57,7 +52,7 @@ export const nestedDocsPlusPlugin =
           ...collection,
           fields,
           hooks: {
-            ...(collection.hooks ?? {}),
+            ...collection.hooks,
             beforeChange: [
               ...(collection.hooks?.beforeChange ?? []),
               setPathnameHook,

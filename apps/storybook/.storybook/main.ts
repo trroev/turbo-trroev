@@ -1,5 +1,5 @@
-import path, { dirname, join } from 'path'
-import type { StorybookConfig } from '@storybook/nextjs'
+import path, { dirname, join } from 'node:path'
+import type {StorybookConfig} from '@storybook/nextjs';
 
 const config: StorybookConfig = {
   addons: [
@@ -26,7 +26,6 @@ const config: StorybookConfig = {
   webpackFinal: async (config, { configType }) => {
     config.resolve = config.resolve || {}
     config.resolve.fallback = {
-      fs: false,
       assert: false,
       buffer: false,
       console: false,
@@ -34,12 +33,13 @@ const config: StorybookConfig = {
       crypto: false,
       domain: false,
       events: false,
+      fs: false,
       http: false,
       https: false,
       os: false,
       path: false,
-      punycode: false,
       process: false,
+      punycode: false,
       querystring: false,
       stream: false,
       string_decoder: false,
@@ -55,6 +55,7 @@ const config: StorybookConfig = {
     config.module = config.module || {}
     config.module.rules = config.module.rules || []
     config.module.rules.push({
+      include: path.resolve(__dirname, '../src'),
       test: /\.css$/,
       use: [
         'style-loader',
@@ -65,7 +66,6 @@ const config: StorybookConfig = {
           },
         },
       ],
-      include: path.resolve(__dirname, '../src'),
     })
 
     return config

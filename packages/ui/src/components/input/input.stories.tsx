@@ -1,29 +1,28 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from '@trroev/ui/Button'
+import { Label } from '@trroev/ui/Label'
 
-import { Button } from '@trroev/ui/button'
-import { Label } from '@trroev/ui/label'
-
-import { Input } from './input'
+import { Input } from './Input'
 
 const meta: Meta<typeof Input> = {
-  title: 'Input',
-  component: Input,
-  argTypes: {
-    radius: {
-      options: ['none', 'sm', 'md', 'lg', 'full'],
-      control: { type: 'radio' },
-    },
-    type: {
-      options: ['text', 'password', 'email', 'file'],
-      control: { type: 'radio' },
-    },
-    disabled: {
-      control: { type: 'boolean' },
-    },
-  },
   args: {
     type: 'email',
   },
+  argTypes: {
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    radius: {
+      control: { type: 'radio' },
+      options: ['none', 'sm', 'md', 'lg', 'full'],
+    },
+    type: {
+      control: { type: 'radio' },
+      options: ['text', 'password', 'email', 'file'],
+    },
+  },
+  component: Input,
+  title: 'Input',
 }
 
 export default meta

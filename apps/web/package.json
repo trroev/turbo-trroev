@@ -27,6 +27,7 @@
     "@dotenvx/dotenvx": "^1.22.0",
     "@t3-oss/env-nextjs": "^0.11.1",
     "@trroev/eslint-config": "workspace:*",
+    "@trroev/icons": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tailwind-config": "workspace:*",
     "@trroev/themes": "workspace:*",

@@ -1,6 +1,10 @@
-import { cva, type VariantProps } from 'class-variance-authority'
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
 
 const headingVariants = cva('scroll-m-20 tracking-tight', {
+  defaultVariants: {
+    display: 'h1',
+  },
   variants: {
     display: {
       h1: 'text-4xl font-extrabold md:text-5xl lg:text-6xl',
@@ -10,9 +14,6 @@ const headingVariants = cva('scroll-m-20 tracking-tight', {
       h5: 'text-lg font-semibold md:text-xl lg:text-2xl',
       h6: 'text-base font-semibold md:text-lg lg:text-xl',
     },
-  },
-  defaultVariants: {
-    display: 'h1',
   },
 })
 

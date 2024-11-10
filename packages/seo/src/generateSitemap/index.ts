@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import type { MetadataRoute } from 'next'
+import type {MetadataRoute} from 'next';
 
 import { env } from '@trroev/env/seo'
 

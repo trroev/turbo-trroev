@@ -1,4 +1,4 @@
-import { type CollectionAfterChangeHook, type PayloadRequest } from 'payload'
+import type {CollectionAfterChangeHook, PayloadRequest} from 'payload';
 
 import { env } from '@trroev/env/payload'
 
@@ -13,16 +13,16 @@ const revalidate = async (slug: string, req: PayloadRequest): Promise<void> => {
     } else {
       req.payload.logger.error(`Error revalidating path ${slug}`)
     }
-  } catch (err) {
+  } catch (error) {
     req.payload.logger.error(
       // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      `Error hitting revalidate route for ${slug}, ${err}`,
+      `Error hitting revalidate route for ${slug}, ${error}`,
     )
   }
 }
 
 export const RevalidatePage: CollectionAfterChangeHook = ({ doc, req }) => {
-  // eslint-disable-next-line no-void, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
   void revalidate(doc.slug, req)
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return

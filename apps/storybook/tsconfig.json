@@ -7,5 +7,5 @@
   },
   "exclude": ["node_modules"],
   "extends": "@trroev/tsconfig/base.json",
-  "include": ["*.ts", "src"]
+  "include": [".", ".storybook/**/*"]
 }
