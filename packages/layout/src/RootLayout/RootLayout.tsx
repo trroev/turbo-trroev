@@ -1,17 +1,16 @@
-import type {FC, HTMLAttributes, ReactNode} from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { Merriweather, Poppins } from 'next/font/google'
-
 import { cn } from '@trroev/ui/cn'
 
 const merriweather = Merriweather({
   subsets: ['latin'],
   variable: '--font-serif',
-  weight: '400',
+  weight: ['300', '400', '700', '900'],
 })
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: '400',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 })
 
 type RootLayoutProps = {
@@ -31,16 +30,14 @@ const RootLayout: FC<RootLayoutProps> = ({
     <head>{head}</head>
     <body
       className={cn(
-        'min-h-screen bg-background antialiased',
+        'relative isolate flex min-h-svh flex-col bg-background font-sans antialiased',
         merriweather.variable,
         poppins.variable,
         className,
       )}
     >
       {header}
-      <div className="relative flex min-h-screen flex-col bg-background">
-        {children}
-      </div>
+      {children}
       {footer}
     </body>
   </html>

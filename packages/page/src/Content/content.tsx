@@ -73,9 +73,9 @@ export const ContentPage: FC<ContentPageProps> = async ({
   }
 
   return (
-    <>
+    <main className="grow">
       <ContentPagePreview />
       {/* <BlockRenderer blocks={page.blocks} /> */}
-    </>
+    </main>
   )
 }

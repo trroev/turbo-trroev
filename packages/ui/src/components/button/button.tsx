@@ -1,6 +1,7 @@
 import type { ButtonHTMLAttributes } from 'react'
 import { forwardRef } from 'react'
 import { Slot } from '@radix-ui/react-slot'
+
 import { cn } from '@trroev/ui/cn'
 
 import type { ButtonVariantProps } from './Button.variants'

@@ -3,6 +3,7 @@
 import type { ComponentPropsWithoutRef, ComponentRef } from 'react'
 import { forwardRef } from 'react'
 import * as LabelPrimitive from '@radix-ui/react-label'
+
 import { cn } from '@trroev/ui/cn'
 
 import type { LabelVariantProps } from './Label.variants'

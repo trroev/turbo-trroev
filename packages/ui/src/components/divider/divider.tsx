@@ -3,6 +3,7 @@
 import type { ComponentPropsWithoutRef, ComponentRef } from 'react'
 import { forwardRef } from 'react'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
+
 import { cn } from '@trroev/ui/cn'
 
 import type { DividerVariantProps } from './Divider.variants'

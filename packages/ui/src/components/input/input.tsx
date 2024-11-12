@@ -1,5 +1,6 @@
 import type { InputHTMLAttributes } from 'react'
 import { forwardRef } from 'react'
+
 import { cn } from '@trroev/ui/cn'
 
 import type { InputVariantProps } from './Input.variants'

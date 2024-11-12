@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from 'react'
+
 import { cn } from '@trroev/ui/cn'
 
 import type { BadgeVariantProps } from './Badge.variants'

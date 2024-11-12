@@ -3,6 +3,7 @@
 import type { ComponentPropsWithoutRef, ComponentRef } from 'react'
 import { forwardRef } from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
+
 import { cn } from '@trroev/ui/cn'
 
 import type { AvatarVariantProps } from './Avatar.variants'

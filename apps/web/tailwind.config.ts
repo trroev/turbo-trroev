@@ -1,5 +1,4 @@
-import type {Config} from 'tailwindcss';
-
+import type { Config } from 'tailwindcss'
 import baseConfig from '@trroev/tailwind-config'
 
 export default {
@@ -12,6 +11,7 @@ export default {
     '../../packages/page/**/*.{ts,tsx}',
     '../../packages/svg/**/*.{ts,tsx}',
     '../../packages/ui/**/*.{ts,tsx}',
+    '!../../packages/**/node_modules/**',
   ],
   presets: [baseConfig],
 } satisfies Config
