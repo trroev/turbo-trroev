@@ -6,7 +6,7 @@ import { cn } from '@trroev/ui/cn'
 
 type EyebrowProps = {
   asChild?: boolean
-} & ComponentPropsWithoutRef<'div'>
+} & ComponentPropsWithoutRef<'p'>
 
 const Eyebrow = forwardRef<HTMLParagraphElement, EyebrowProps>(
   ({ asChild, className, ...rest }, ref) => {
@@ -22,5 +22,6 @@ const Eyebrow = forwardRef<HTMLParagraphElement, EyebrowProps>(
   },
 )
 Eyebrow.displayName = 'Eyebrow'
+
 export { Eyebrow }
 export type { EyebrowProps }
