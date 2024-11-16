@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
+
 :root {
   /* color */
   --body-base-color: var(--text-paragraph);
@@ -126,8 +128,8 @@
   --table-header-font-size: 1rem;
   --table-header-font-weight: 500;
   /* string */
-  --font-sans: Open Sans;
-  --font-serif: Lora;
+  --font-sans: Geist, sans-serif;
+  --font-serif: Geist Mono, monospace;
   --body-base-font-family: var(--font-sans);
   --body-base-link-font-family: var(--font-sans);
   --body-lg-font-family: var(--font-sans);

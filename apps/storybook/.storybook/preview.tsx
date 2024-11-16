@@ -1,5 +1,6 @@
-import type {Preview} from '@storybook/react';
+import type { Preview } from '@storybook/react'
 
+import '@trroev/themes/default.css'
 import '@trroev/ui/styles.css'
 
 const preview: Preview = {

@@ -8,7 +8,7 @@ import {
 
 const HomePage = () => {
   return (
-    <main>
+    <main className="flex grow items-center justify-center">
       <Card className="w-80">
         <CardHeader>
           <CardTitle>Welcome!</CardTitle>

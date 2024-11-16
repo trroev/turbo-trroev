@@ -1,7 +1,7 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 
-const headingVariants = cva('scroll-m-20 tracking-tight', {
+const headingVariants = cva('scroll-m-20 font-serif tracking-tight', {
   defaultVariants: {
     display: 'h1',
   },

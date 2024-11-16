@@ -1,4 +1,4 @@
-import type {ThemeConfig} from './types';
+import type { ThemeConfig } from './types'
 
 export const colors: ThemeConfig['colors'] = {
   accent: {
@@ -38,5 +38,9 @@ export const colors: ThemeConfig['colors'] = {
   secondary: {
     DEFAULT: 'hsl(var(--secondary))',
     foreground: 'hsl(var(--secondary-foreground))',
+  },
+  tertiary: {
+    DEFAULT: 'hsl(var(--tertiary))',
+    foreground: 'hsl(var(--tertiary-foreground))',
   },
 }
