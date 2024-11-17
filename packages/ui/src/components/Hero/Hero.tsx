@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import type { TextLockupProps } from '@trroev/ui/TextLockup'
 import { cn } from '@trroev/ui/cn'
+import { Constrainer } from '@trroev/ui/Constrainer'
 import { TextLockup } from '@trroev/ui/TextLockup'
 
 type HeroProps = {
@@ -32,11 +33,9 @@ const Hero: FC<HeroProps> = ({
       )}
       {...rest}
     >
-      <TextLockup
-        className="z-10"
-        color={image && 'inverse'}
-        {...textLockupProps}
-      />
+      <Constrainer className="z-10">
+        <TextLockup color={image && 'inverse'} {...textLockupProps} />
+      </Constrainer>
       {image && (
         <Image
           alt={image.alt}
