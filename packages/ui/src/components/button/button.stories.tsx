@@ -1,14 +1,23 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import type { Meta, StoryObj } from '@storybook/react'
+import { Icon } from '@trroev/icons'
 
-import { Cookie } from '@trroev/ui/icons/cookie'
-
-import { Button, type ButtonProps } from './button'
+import type { ButtonProps } from './Button'
+import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
-  title: 'Button',
-  component: Button,
+  args: {
+    asChild: false,
+    size: 'md',
+    variant: 'default',
+  },
   argTypes: {
+    size: {
+      control: { type: 'radio' },
+      options: ['sm', 'md', 'lg', 'icon'],
+    },
     variant: {
+      control: { type: 'radio' },
       options: [
         'default',
         'destructive',
@@ -17,18 +26,10 @@ const meta: Meta<typeof Button> = {
         'ghost',
         'link',
       ],
-      control: { type: 'radio' },
-    },
-    size: {
-      options: ['sm', 'md', 'lg', 'icon'],
-      control: { type: 'radio' },
     },
   },
-  args: {
-    asChild: false,
-    variant: 'default',
-    size: 'md',
-  },
+  component: Button,
+  title: 'Button',
 }
 
 export default meta
@@ -39,14 +40,14 @@ export const Default: Story = {
   render: (args: ButtonProps) => <Button {...args}>Button Text</Button>,
 }
 
-export const Icon: Story = {
+export const WithIcon: Story = {
   args: {
     size: 'icon',
   },
 
   render: (args: ButtonProps) => (
     <Button {...args}>
-      <Cookie className="size-6" />
+      <Icon className="size-6" name="Cookie" />
     </Button>
   ),
 }

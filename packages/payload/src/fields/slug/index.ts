@@ -1,4 +1,4 @@
-import { type CheckboxField, type TextField } from 'payload'
+import type {CheckboxField, TextField} from 'payload';
 
 import { useFormatSlug } from '@trroev/payload/hooks/FormatSlug'
 
@@ -32,10 +32,10 @@ export const slugField: Slug = (fieldToUse = 'title', overrides = {}) => {
     label: 'Slug',
     name: 'slug',
     type: 'text',
-    ...(slugOverrides ?? {}),
+    ...slugOverrides,
     admin: {
       position: 'sidebar',
-      ...(slugOverrides?.admin ?? {}),
+      ...slugOverrides?.admin,
       components: {
         Field: {
           clientProps: {

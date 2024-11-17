@@ -1,19 +1,20 @@
-import { type HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 
 import { cn } from '@trroev/ui/cn'
 
-import { badgeVariants, type BadgeVariantProps } from './badge.variants'
+import type { BadgeVariantProps } from './Badge.variants'
+import { badgeVariants } from './Badge.variants'
 
-type BadgeProps = HTMLAttributes<HTMLDivElement> & BadgeVariantProps
+type BadgeProps = BadgeVariantProps & HTMLAttributes<HTMLDivElement>
 
 const Badge = ({ className, radius, variant, ...props }: BadgeProps) => {
   return (
     <div
-      className={cn(badgeVariants({ radius, variant, className }))}
+      className={cn(badgeVariants({ className, radius, variant }))}
       {...props}
     />
   )
 }
 
-export { Badge, badgeVariants }
+export { Badge }
 export type { BadgeProps }

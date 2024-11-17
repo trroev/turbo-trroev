@@ -1,9 +1,11 @@
-import { forwardRef, type ButtonHTMLAttributes } from 'react'
+import type { ButtonHTMLAttributes } from 'react'
+import { forwardRef } from 'react'
 import { Slot } from '@radix-ui/react-slot'
 
 import { cn } from '@trroev/ui/cn'
 
-import { buttonVariants, type ButtonVariantProps } from './button.variants'
+import type { ButtonVariantProps } from './Button.variants'
+import { buttonVariants } from './Button.variants'
 
 type ButtonProps = {
   asChild?: boolean
@@ -11,12 +13,12 @@ type ButtonProps = {
   ButtonVariantProps
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ asChild = false, className, size, variant, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
 
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ className, size, variant }))}
         ref={ref}
         {...props}
       />
@@ -25,5 +27,5 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = 'Button'
 
-export { Button, buttonVariants }
+export { Button }
 export type { ButtonProps }

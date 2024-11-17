@@ -1,38 +1,39 @@
-import { cva, type VariantProps } from 'class-variance-authority'
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
 
 const cardVariants = cva('bg-card text-card-foreground', {
-  variants: {
-    variant: {
-      default: '',
-      withBackgroundImage: 'relative overflow-hidden text-background',
-    },
-    isBlurred: {
-      true: 'backdrop-blur-md backdrop-saturate-150',
-      false: '',
-    },
-    hasBorder: {
-      true: 'border border-border',
-      false: 'border-none',
-    },
-    radius: {
-      none: 'rounded-none',
-      sm: 'rounded-sm',
-      md: 'rounded-md',
-      lg: 'rounded-lg',
-    },
-    shadow: {
-      none: '',
-      sm: 'shadow-sm',
-      md: 'shadow-md',
-      lg: 'shadow-lg',
-    },
-  },
   defaultVariants: {
-    variant: 'default',
     hasBorder: true,
     isBlurred: false,
     radius: 'lg',
     shadow: 'sm',
+    variant: 'default',
+  },
+  variants: {
+    hasBorder: {
+      false: 'border-none',
+      true: 'border border-border',
+    },
+    isBlurred: {
+      false: '',
+      true: 'backdrop-blur-md backdrop-saturate-150',
+    },
+    radius: {
+      lg: 'rounded-lg',
+      md: 'rounded-md',
+      none: 'rounded-none',
+      sm: 'rounded-sm',
+    },
+    shadow: {
+      lg: 'shadow-lg',
+      md: 'shadow-md',
+      none: '',
+      sm: 'shadow-sm',
+    },
+    variant: {
+      default: '',
+      withBackgroundImage: 'relative overflow-hidden text-background',
+    },
   },
 })
 

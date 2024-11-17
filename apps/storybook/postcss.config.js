@@ -1,6 +1,5 @@
 module.exports = {
   plugins: {
-    tailwindcss: {},
     autoprefixer: {},
     /**
      * We use this postcss plugin to create custom css classes for
@@ -18,5 +17,6 @@ module.exports = {
       // and start adding dots everywhere, breaking this functionality.
       restrictTo: [':hover', ':focus'],
     },
+    tailwindcss: {},
   },
 }

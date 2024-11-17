@@ -1,7 +1,7 @@
-import React from 'react'
 import type { Preview } from '@storybook/react'
 
-import '@trroev/ui/styles'
+import '@trroev/themes/default.css'
+import '@trroev/ui/styles.css'
 
 const preview: Preview = {
   parameters: {
@@ -18,15 +18,6 @@ const preview: Preview = {
       appDirectory: true,
     },
   },
-
-  decorators: [
-    Story => (
-      // add necessary providers here
-      <div style={{ margin: '2rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
 
   tags: ['autodocs'],
 }

@@ -1,17 +1,16 @@
-import { ButtonLink } from '@trroev/ui/ButtonLink'
-import { Heading } from '@trroev/ui/Heading'
-import { Jumbotron } from '@trroev/ui/Jumbotron'
-import { Text } from '@trroev/ui/Text'
+import { Hero } from '@trroev/ui/Hero'
 
 const HomePage = () => {
   return (
-    <main>
-      <Jumbotron
-        alignment="center"
-        background="secondaryLight"
-        body={<Text>This is where you get started</Text>}
-        buttons={<ButtonLink href="/about">Learn more</ButtonLink>}
-        heading={<Heading>Welcome!</Heading>}
+    <main className="flex grow items-center justify-center">
+      <Hero
+        body="This is where you get started"
+        eyebrow="trroev Web App"
+        heading="Welcome!"
+        image={{
+          alt: 'This is the alt text',
+          src: '/images/warm-gradient.jpg',
+        }}
       />
     </main>
   )

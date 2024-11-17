@@ -1,20 +1,20 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Heading } from './heading'
-import { type HeadingVariantsProps } from './heading.variants'
+import type { HeadingVariantsProps } from './Heading.variants'
+import { Heading } from './Heading'
 
 const meta: Meta<typeof Heading> = {
-  title: 'Typeography/Heading',
-  component: Heading,
-  argTypes: {
-    display: {
-      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      control: { type: 'radio' },
-    },
-  },
   args: {
     display: 'h1',
   },
+  argTypes: {
+    display: {
+      control: { type: 'radio' },
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    },
+  },
+  component: Heading,
+  title: 'Typeography/Heading',
 }
 
 export default meta

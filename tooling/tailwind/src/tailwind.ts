@@ -1,11 +1,13 @@
+import type { Config } from 'tailwindcss'
 import ContainerQueries from '@tailwindcss/container-queries'
 import TailwindCSSAnimate from 'tailwindcss-animate'
-import { type Config } from 'tailwindcss/types/config'
 
 import { colors } from './colors'
+import { fontFamily } from './typography'
 
 export const ExtendedConfig = {
   colors,
+  fontFamily,
 }
 
 export default {

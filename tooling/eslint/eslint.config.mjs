@@ -28,7 +28,7 @@ const compat = new FlatCompat({
 })
 
 const baseRules = {
-  'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
+  'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
   'import/first': ['error'],
   'import/newline-after-import': ['error'],
   'import/no-duplicates': ['error'],

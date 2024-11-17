@@ -1,4 +1,4 @@
-import { type Metadata } from 'next'
+import type {Metadata} from 'next';
 
 import '@trroev/themes/default.css'
 import '@trroev/ui/styles.css'

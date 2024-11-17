@@ -7,7 +7,6 @@
   "exports": {
     "./*": "./src/components/*/index.ts",
     "./cn": "./src/utils/cn.ts",
-    "./icons/*": "./src/icons/*/*.tsx",
     "./styles.css": "./src/styles/index.css"
   },
   "scripts": {
@@ -26,6 +25,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "next": "catalog:next15",
     "react": "catalog:next15",
     "react-dom": "catalog:next15",
     "tailwind-merge": "^2.5.4"
@@ -34,6 +34,7 @@
     "@axa-ch/react-polymorphic-types": "^1.2.6",
     "@storybook/react": "^8.4.2",
     "@trroev/eslint-config": "workspace:*",
+    "@trroev/icons": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tailwind-config": "workspace:*",
     "@trroev/themes": "workspace:*",

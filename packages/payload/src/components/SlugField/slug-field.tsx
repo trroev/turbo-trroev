@@ -1,6 +1,7 @@
 'use client'
 
-import { useCallback, useEffect, type FC, type MouseEvent } from 'react'
+import {   useCallback, useEffect } from 'react'
+import type {FC, MouseEvent} from 'react';
 import {
   Button,
   FieldLabel,
@@ -9,7 +10,7 @@ import {
   useFieldProps,
   useFormFields,
 } from '@payloadcms/ui'
-import { type TextFieldClientProps } from 'payload'
+import type {TextFieldClientProps} from 'payload';
 
 import { formatSlug } from '@trroev/payload/helpers/formatSlug'
 

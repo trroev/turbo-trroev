@@ -1,4 +1,6 @@
-import { type FC, type HTMLAttributes, type ReactNode } from 'react'
+import type { FC, HTMLAttributes, ReactNode } from 'react'
+
+import { cn } from '@trroev/ui/cn'
 
 type RootLayoutProps = {
   footer?: ReactNode
@@ -8,17 +10,21 @@ type RootLayoutProps = {
 
 const RootLayout: FC<RootLayoutProps> = ({
   children,
+  className,
   footer,
   head,
   header,
 }) => (
   <html lang="en" suppressHydrationWarning>
     <head>{head}</head>
-    <body className="min-h-screen bg-background antialiased">
+    <body
+      className={cn(
+        'relative isolate flex min-h-svh flex-col bg-background font-sans antialiased',
+        className,
+      )}
+    >
       {header}
-      <div className="relative flex min-h-screen flex-col bg-background">
-        {children}
-      </div>
+      {children}
       {footer}
     </body>
   </html>

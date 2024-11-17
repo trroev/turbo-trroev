@@ -1,12 +1,11 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Input } from '@trroev/ui/Input'
 
-import { Input } from '@trroev/ui/input'
-
-import { Label } from './label'
+import { Label } from './Label'
 
 const meta: Meta<typeof Label> = {
-  title: 'Label',
   component: Label,
+  title: 'Label',
 }
 
 export default meta
