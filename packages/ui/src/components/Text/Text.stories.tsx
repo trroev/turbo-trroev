@@ -22,5 +22,7 @@ export default meta
 type Story = StoryObj<typeof Text>
 
 export const Default: Story = {
+  name: 'Text',
+
   render: args => <Text {...args} />,
 }
