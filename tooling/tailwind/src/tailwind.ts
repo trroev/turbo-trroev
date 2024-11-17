@@ -1,5 +1,5 @@
+import type { Config } from 'tailwindcss'
 import ContainerQueries from '@tailwindcss/container-queries'
-import type {Config} from 'tailwindcss';
 import TailwindCSSAnimate from 'tailwindcss-animate'
 
 import { colors } from './colors'

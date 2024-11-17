@@ -3,9 +3,14 @@ import { cva } from 'class-variance-authority'
 
 const headingVariants = cva('scroll-m-20 font-serif tracking-tight', {
   defaultVariants: {
+    color: 'default',
     display: 'h1',
   },
   variants: {
+    color: {
+      default: 'text-foreground',
+      inverse: 'text-background',
+    },
     display: {
       h1: 'text-4xl font-extrabold md:text-5xl lg:text-6xl',
       h2: 'text-3xl font-bold md:text-4xl lg:text-5xl',

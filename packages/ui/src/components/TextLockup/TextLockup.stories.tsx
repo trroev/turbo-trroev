@@ -26,6 +26,10 @@ const meta: Meta<typeof TextLockup> = {
     subHeading: 'Subheading Goes Here',
   },
   argTypes: {
+    alignment: {
+      control: { type: 'radio' },
+      options: ['left', 'center', 'right'],
+    },
     kind: {
       control: { type: 'radio' },
       options: ['small', 'large'],
@@ -40,11 +44,7 @@ export default meta
 type Story = StoryObj<typeof TextLockup>
 
 export const Default: Story = {
-  args: {
-    kind: 'large',
-    subHeading: 'Subheading Goes Here',
-  },
-
   name: 'Text Lockup',
+
   render: args => <TextLockup {...args} />,
 }

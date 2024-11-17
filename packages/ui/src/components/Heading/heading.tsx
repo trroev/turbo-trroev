@@ -54,14 +54,14 @@ const getTag = (
 }
 
 const HeadingInner = <T extends HeadingAllowedElements>(
-  { as, children, className, display, ...rest }: HeadingProps<T>,
+  { as, children, className, color, display, ...rest }: HeadingProps<T>,
   ref: PolymorphicForwardedRef<T>,
 ) =>
   createElement(
     getTag(display, as),
     {
       ...rest,
-      className: headingVariants({ className, display: display ?? as }),
+      className: headingVariants({ className, color, display: display ?? as }),
       ref,
     },
     children,

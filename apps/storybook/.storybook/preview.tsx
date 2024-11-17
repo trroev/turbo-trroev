@@ -4,15 +4,6 @@ import '@trroev/themes/default.css'
 import '@trroev/ui/styles.css'
 
 const preview: Preview = {
-  decorators: [
-    Story => (
-      // add necessary providers here
-      <div style={{ margin: '2rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
-
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
 

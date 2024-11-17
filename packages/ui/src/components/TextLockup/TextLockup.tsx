@@ -16,6 +16,7 @@ import { textLockupVariants } from './TextLockup.variants'
 type TextLockupProps = {
   body?: string
   callsToAction?: [] | [LinkType, LinkType] | [LinkType]
+  color?: 'default' | 'inverse'
   eyebrow?: string
   heading?: string
   icon?: IconName
@@ -24,9 +25,11 @@ type TextLockupProps = {
   TextLockupVariantsProps
 
 const TextLockup: FC<TextLockupProps> = ({
+  alignment,
   body,
   callsToAction = [],
   className,
+  color = 'default',
   eyebrow,
   heading,
   icon,
@@ -37,6 +40,7 @@ const TextLockup: FC<TextLockupProps> = ({
   const headingType = kind === 'small' ? 'h5' : 'h2'
   const subHeadingType = kind === 'small' ? 'h6' : 'h5'
   const textSize = kind === 'small' && 'text-sm'
+  const textColor = color === 'inverse' && 'text-background'
 
   if (callsToAction.length > 2) {
     // eslint-disable-next-line no-console
@@ -44,20 +48,60 @@ const TextLockup: FC<TextLockupProps> = ({
   }
 
   return (
-    <div className={cn(textLockupVariants({ kind }), className)} {...rest}>
-      <div className={cn('flex flex-col gap-4', kind === 'small' && 'gap-2')}>
-        <div className="flex flex-col gap-2">
+    <div
+      className={cn(textLockupVariants({ alignment, kind }), className)}
+      {...rest}
+    >
+      <div
+        className={cn(
+          'flex flex-col gap-4',
+          kind === 'small' && 'gap-2',
+          alignment === 'center' && 'items-center',
+          alignment === 'right' && 'items-end',
+        )}
+      >
+        <div
+          className={cn(
+            'flex flex-col gap-2',
+            alignment === 'center' && 'items-center',
+            alignment === 'right' && 'items-end',
+          )}
+        >
           {icon && <Icon className="size-8" name={icon} />}
-          {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-          {heading && <Heading as={headingType}>{heading}</Heading>}
-          {subHeading && <Heading as={subHeadingType}>{subHeading}</Heading>}
+          {eyebrow && (
+            <Eyebrow color={color === 'inverse' ? 'inverse' : 'default'}>
+              {eyebrow}
+            </Eyebrow>
+          )}
+          {heading && (
+            <Heading
+              as={headingType}
+              color={color === 'inverse' ? 'inverse' : 'default'}
+            >
+              {heading}
+            </Heading>
+          )}
+          {subHeading && (
+            <Heading
+              as={subHeadingType}
+              color={color === 'inverse' ? 'inverse' : 'default'}
+            >
+              {subHeading}
+            </Heading>
+          )}
         </div>
-        {body && <Text className={cn('max-w-prose', textSize)}>{body}</Text>}
+        {body && (
+          <Text className={cn('max-w-prose', textSize, textColor)}>{body}</Text>
+        )}
       </div>
       {callsToAction.length > 0 && (
         <div className="flex gap-4">
           {callsToAction.slice(0, 2).map(cta => (
-            <Button asChild key={cta.id}>
+            <Button
+              asChild
+              key={cta.id}
+              variant={color === 'inverse' ? 'secondary' : 'default'}
+            >
               <Link
                 href={cta.href}
                 prefetch={false}

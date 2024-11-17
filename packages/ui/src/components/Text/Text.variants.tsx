@@ -1,7 +1,7 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 
-const textVariants = cva('font-sans text-primary', {
+const textVariants = cva('font-sans text-foreground', {
   defaultVariants: {
     size: 'base',
   },
