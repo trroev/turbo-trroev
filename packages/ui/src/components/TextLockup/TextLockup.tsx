@@ -95,7 +95,7 @@ const TextLockup: FC<TextLockupProps> = ({
         )}
       </div>
       {callsToAction.length > 0 && (
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {callsToAction.slice(0, 2).map(cta => (
             <Button
               asChild
