@@ -28,7 +28,7 @@ const Hero: FC<HeroProps> = ({
   return (
     <section
       className={cn(
-        'relative flex min-h-dvh flex-col justify-center',
+        'relative flex min-h-dvh w-full flex-col justify-center',
         className,
       )}
       {...rest}
