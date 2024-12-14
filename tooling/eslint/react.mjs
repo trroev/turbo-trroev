@@ -2,13 +2,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 // @ts-expect-error - no types
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
 // @ts-expect-error - no types
 import reactHooks from 'eslint-plugin-react-hooks'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import base from '@trroev/eslint-config'
 
 const reactRules = {

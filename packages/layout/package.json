@@ -24,10 +24,10 @@
     "@trroev/eslint-config": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
-    "@types/node": "^20.17.6",
+    "@types/node": "^20.17.10",
     "@types/react": "catalog:next15",
-    "eslint": "^9.14.0",
-    "prettier": "^3.3.3",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
     "react": "catalog:next15",
     "react-dom": "catalog:next15",
     "typescript": "^5.6.3"

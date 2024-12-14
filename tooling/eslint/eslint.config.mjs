@@ -116,7 +116,7 @@ export const rootEslintConfig = [
           jsx: true,
         },
         projectService: true,
-        tsconfigRootDir: __dirname,
+        tsconfigRootDir: import.meta.dirname,
       },
       sourceType: 'module',
     },
