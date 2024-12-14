@@ -1,15 +1,17 @@
-import { deepMerge  } from 'payload'
-import type {Field} from 'payload';
+import type { Field } from 'payload'
+import { deepMerge } from 'payload'
+
+import { Hero } from '@trroev/payload/blocks/Hero'
 
 type BlocksField = (overrides?: Partial<Field>) => Field
 
-export const blocks = []
+export const blocks = [Hero]
 
 export const blocksField: BlocksField = (overrides = {}) =>
   deepMerge<Field, Partial<Field>>(
     {
       blocks,
-      name: 'content',
+      name: 'blocks',
       type: 'blocks',
     },
     overrides,

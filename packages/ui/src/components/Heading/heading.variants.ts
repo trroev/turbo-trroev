@@ -1,6 +1,8 @@
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 
+import type { ExcludeNull } from '@trroev/ui/types/ExcludeNull'
+
 const headingVariants = cva('scroll-m-20 font-serif tracking-tight', {
   defaultVariants: {
     color: 'default',
@@ -23,4 +25,6 @@ const headingVariants = cva('scroll-m-20 font-serif tracking-tight', {
 })
 
 export { headingVariants }
-export type HeadingVariantsProps = VariantProps<typeof headingVariants>
+export type HeadingVariantsProps = ExcludeNull<
+  VariantProps<typeof headingVariants>
+>

@@ -3,6 +3,8 @@ import type { FC } from 'react'
 import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
+
+import { BlockRenderer } from '@trroev/payload/components/BlockRenderer'
 import config from '@trroev/payload/payload-config'
 
 import { ContentPagePreview } from './ContentPagePreview'
@@ -75,7 +77,7 @@ export const ContentPage: FC<ContentPageProps> = async ({
   return (
     <main className="grow">
       <ContentPagePreview />
-      {/* <BlockRenderer blocks={page.blocks} /> */}
+      <BlockRenderer blocks={page.blocks} />
     </main>
   )
 }

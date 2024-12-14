@@ -4,14 +4,19 @@
 /* eslint-disable import/no-named-as-default-member */
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+// @ts-expect-error - no types
 import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
 import typescriptParser from '@typescript-eslint/parser'
+// @ts-expect-error - no types
 import eslintConfigPrettier from 'eslint-config-prettier'
+// @ts-expect-error - no types
 import importPlugin from 'eslint-plugin-import'
 import perfectionist from 'eslint-plugin-perfectionist'
 import { configs as regexpPluginConfigs } from 'eslint-plugin-regexp'
+// @ts-expect-error - no types
 import storybook from 'eslint-plugin-storybook'
+// @ts-expect-error - no types
 import tailwindcss from 'eslint-plugin-tailwindcss'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import unusedImports from 'eslint-plugin-unused-imports'
@@ -111,7 +116,7 @@ export const rootEslintConfig = [
           jsx: true,
         },
         projectService: true,
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: __dirname,
       },
       sourceType: 'module',
     },

@@ -6,7 +6,7 @@ import { Heading } from './Heading'
 const meta: Meta<typeof Heading> = {
   args: {
     display: 'h1',
-  },
+  } satisfies HeadingVariantsProps,
   argTypes: {
     display: {
       control: { type: 'radio' },

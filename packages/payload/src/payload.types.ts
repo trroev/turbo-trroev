@@ -68,7 +68,7 @@ export interface UserAuthOperations {
 export interface Page {
   id: string;
   title: string;
-  content?: unknown[] | null;
+  blocks?: HeroBlock[] | null;
   slug?: string | null;
   slugLock?: boolean | null;
   parent?: (string | null) | Page;
@@ -91,6 +91,35 @@ export interface Page {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HeroBlock".
+ */
+export interface HeroBlock {
+  backgroundImage: string | Media;
+  eyebrow?: string | null;
+  heading?: string | null;
+  subheading?: string | null;
+  body?: string | null;
+  callsToAction?:
+    | {
+        link: {
+          label: string;
+          linkType?: ('internal' | 'external') | null;
+          url?: string | null;
+          internalLink?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          openInNewTab?: boolean | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'Hero';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -219,7 +248,35 @@ export interface PayloadMigration {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
-  content?: T | {};
+  blocks?:
+    | T
+    | {
+        Hero?:
+          | T
+          | {
+              backgroundImage?: T;
+              eyebrow?: T;
+              heading?: T;
+              subheading?: T;
+              body?: T;
+              callsToAction?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          label?: T;
+                          linkType?: T;
+                          url?: T;
+                          internalLink?: T;
+                          openInNewTab?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+      };
   slug?: T;
   slugLock?: T;
   parent?: T;
