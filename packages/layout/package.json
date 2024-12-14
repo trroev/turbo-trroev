@@ -15,21 +15,21 @@
   },
   "prettier": "@trroev/prettier-config",
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.1",
     "@trroev/ui": "workspace:*",
     "next": "catalog:next15"
   },
   "devDependencies": {
-    "@storybook/react": "^8.4.2",
+    "@storybook/react": "^8.4.7",
     "@trroev/eslint-config": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
     "@types/node": "^20.17.10",
     "@types/react": "catalog:next15",
-    "eslint": "^9.16.0",
+    "eslint": "^9.17.0",
     "prettier": "^3.4.2",
     "react": "catalog:next15",
     "react-dom": "catalog:next15",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   }
 }

@@ -25,14 +25,14 @@
   "prettier": "@trroev/prettier-config",
   "devDependencies": {
     "@trroev/prettier-config": "workspace:*",
-    "@turbo/gen": "^2.2.3",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "npm-check-updates": "^17.1.10",
+    "@turbo/gen": "^2.3.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "npm-check-updates": "^17.1.11",
     "prettier": "^3.4.2",
     "syncpack": "^13.0.0",
-    "turbo": "^2.2.3",
-    "typescript": "^5.6.3"
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
   },
   "packageManager": "pnpm@9.10.0+sha256.355a8ab8dbb6ad41befbef39bc4fd6b5df85e12761d2724bd01f13e878de4b13",
   "engines": {
