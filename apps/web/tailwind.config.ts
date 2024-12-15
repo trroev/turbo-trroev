@@ -1,12 +1,18 @@
-/*
- * This file is not used for any compilation purpose, it is only used
- * for Tailwind Intellisense & Autocompletion in the source files
- */
-import { type Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 
 import baseConfig from '@trroev/tailwind-config'
 
 export default {
-  content: [...baseConfig.content, '../../packages/*/src/**/*.{ts,tsx}'],
+  // We need to append the path to the UI package to the content array so that
+  // those classes are included correctly.
+  content: [
+    ...baseConfig.content,
+    '../../packages/icon/**/*.{ts,tsx}',
+    '../../packages/layout/**/*.{ts,tsx}',
+    '../../packages/page/**/*.{ts,tsx}',
+    '../../packages/svg/**/*.{ts,tsx}',
+    '../../packages/ui/**/*.{ts,tsx}',
+    '!../../packages/**/node_modules/**',
+  ],
   presets: [baseConfig],
 } satisfies Config

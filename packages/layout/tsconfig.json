@@ -6,6 +6,5 @@
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },
   "exclude": ["node_modules"],
-  "extends": "@trroev/tsconfig/base.json",
-  "include": ["*.ts", "src"]
+  "extends": "@trroev/tsconfig/base.json"
 }

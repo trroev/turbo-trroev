@@ -1,5 +1,5 @@
-import { fileURLToPath } from 'url'
-import { type NextConfig } from 'next'
+import { fileURLToPath } from 'node:url'
+import type { NextConfig } from 'next'
 import createJiti from 'jiti'
 
 // Import env files to validate at build time. Use jiti so we can load .ts files in here.

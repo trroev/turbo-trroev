@@ -1,10 +1,8 @@
-import { type Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import '@trroev/themes/default.css'
 import '@trroev/ui/styles.css'
 import './globals.css'
-
-import { RootLayout } from '@trroev/layout/RootLayout'
 
 export const metadata: Metadata = {
   description:
@@ -15,4 +13,4 @@ export const metadata: Metadata = {
   },
 }
 
-export default RootLayout
+export { RootLayout as default } from '@trroev/layout/RootLayout'

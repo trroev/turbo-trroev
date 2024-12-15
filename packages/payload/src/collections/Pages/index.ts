@@ -1,8 +1,8 @@
+import type { CollectionConfig } from 'payload'
 import {
   createBreadcrumbsField,
   createParentField,
 } from '@payloadcms/plugin-nested-docs'
-import { type CollectionConfig } from 'payload'
 
 import { env } from '@trroev/env/payload'
 import { AdminAccess } from '@trroev/payload/access/Admin'
@@ -32,8 +32,13 @@ export const Pages: CollectionConfig = {
     ],
     group: 'Content',
     livePreview: {
-      url: ({ data }) =>
-        `${env.NEXT_PUBLIC_PAYLOAD_URL}${data.pathname}?isLivePreview=true`,
+      url: ({ data }) => {
+        if ('pathname' in data && typeof data.pathname === 'string') {
+          return `${env.NEXT_PUBLIC_PAYLOAD_URL}${data.pathname}?isLivePreview=true`
+        }
+
+        return ''
+      },
     },
     pagination: {
       defaultLimit: 25,

@@ -1,3 +1,4 @@
+// eslint-disable-next-line unicorn/prefer-node-protocol, unicorn/import-style
 import path, { dirname, join } from 'path'
 import type { StorybookConfig } from '@storybook/nextjs'
 
@@ -23,10 +24,9 @@ const config: StorybookConfig = {
 
   typescript: { reactDocgen: 'react-docgen' },
 
-  webpackFinal: async (config, { configType }) => {
-    config.resolve = config.resolve || {}
+  webpackFinal: (config, { configType: _configType }) => {
+    config.resolve = config.resolve ?? {}
     config.resolve.fallback = {
-      fs: false,
       assert: false,
       buffer: false,
       console: false,
@@ -34,12 +34,13 @@ const config: StorybookConfig = {
       crypto: false,
       domain: false,
       events: false,
+      fs: false,
       http: false,
       https: false,
       os: false,
       path: false,
-      punycode: false,
       process: false,
+      punycode: false,
       querystring: false,
       stream: false,
       string_decoder: false,
@@ -52,9 +53,10 @@ const config: StorybookConfig = {
       zlib: false,
     }
 
-    config.module = config.module || {}
-    config.module.rules = config.module.rules || []
+    config.module = config.module ?? {}
+    config.module.rules = config.module.rules ?? []
     config.module.rules.push({
+      include: path.resolve(process.cwd(), '../src'),
       test: /\.css$/,
       use: [
         'style-loader',
@@ -65,7 +67,6 @@ const config: StorybookConfig = {
           },
         },
       ],
-      include: path.resolve(__dirname, '../src'),
     })
 
     return config
@@ -74,6 +75,7 @@ const config: StorybookConfig = {
 
 export default config
 
-function getAbsolutePath(value) {
+function getAbsolutePath(value: string) {
+  // eslint-disable-next-line unicorn/prefer-module
   return dirname(require.resolve(join(value, 'package.json')))
 }

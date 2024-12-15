@@ -1,5 +1,5 @@
 export const formatSlug = (val: string): string =>
   val
-    .replace(/ /g, '-')
-    .replace(/[^\w-]+/g, '')
+    .replaceAll(' ', '-')
+    .replaceAll(/[^\w-]+/g, '')
     .toLowerCase()

@@ -1,6 +1,6 @@
 {
   "name": "@trroev/utils",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -14,18 +14,16 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@trroev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@trroev/eslint-config/base"
-    ],
-    "root": true
+  "dependencies": {
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "@trroev/eslint-config": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
-    "eslint": "^8.57.1",
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.3"
+    "@types/node": "^20.17.10",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
   }
 }

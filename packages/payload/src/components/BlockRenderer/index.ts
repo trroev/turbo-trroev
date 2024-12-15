@@ -1,1 +1,1 @@
-export * from './block-renderer'
+export * from './BlockRenderer'
