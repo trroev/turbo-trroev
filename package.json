@@ -20,7 +20,7 @@
     "packages:update": "npm-check-updates -u && pnpm i",
     "prepare": "husky",
     "storybook": "turbo storybook",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck --continue"
   },
   "prettier": "@trroev/prettier-config",
   "devDependencies": {

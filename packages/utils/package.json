@@ -14,11 +14,8 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@trroev/prettier-config",
-  "eslintConfig": {
-    "extends": [
-      "@trroev/eslint-config/base"
-    ],
-    "root": true
+  "dependencies": {
+    "slugify": "^1.6.0"
   },
   "devDependencies": {
     "@trroev/eslint-config": "workspace:*",
