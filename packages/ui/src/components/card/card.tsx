@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react'
+import type { ComponentPropsWithRef, ComponentRef, HTMLAttributes } from 'react'
 import { forwardRef } from 'react'
 
 import { cn } from '@trroev/ui/cn'
@@ -34,10 +34,10 @@ const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 CardHeader.displayName = 'CardHeader'
 
 const CardTitle = forwardRef<
-  HTMLParagraphElement,
-  HTMLAttributes<HTMLHeadingElement>
->(({ children, className, ...props }, ref) => (
-  <Heading as="h3" className={cn(className)} ref={ref} {...props}>
+  ComponentRef<'h3'>,
+  ComponentPropsWithRef<typeof Heading>
+>(({ as = 'h3', children, className, color, ...props }, ref) => (
+  <Heading as={as} className={cn(className)} color={color} ref={ref} {...props}>
     {children}
   </Heading>
 ))

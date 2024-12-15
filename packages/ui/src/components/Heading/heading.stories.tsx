@@ -1,16 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import type { HeadingVariantsProps } from './Heading.variants'
+import type { HeadingVariantProps } from './Heading.variants'
 import { Heading } from './Heading'
 
 const meta: Meta<typeof Heading> = {
   args: {
-    display: 'h1',
-  } satisfies HeadingVariantsProps,
+    as: 'h1',
+  } satisfies HeadingVariantProps,
   argTypes: {
-    display: {
+    as: {
       control: { type: 'radio' },
       options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    },
+    color: {
+      control: { type: 'radio' },
+      options: ['default', 'inverse'],
     },
   },
   component: Heading,
@@ -22,7 +26,7 @@ export default meta
 type Story = StoryObj<typeof Heading>
 
 export const Default: Story = {
-  render: (args: HeadingVariantsProps) => (
+  render: (args: HeadingVariantProps) => (
     <Heading {...args}>Hello World</Heading>
   ),
 }
