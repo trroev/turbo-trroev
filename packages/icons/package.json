@@ -25,6 +25,7 @@
     "@trroev/eslint-config": "workspace:*",
     "@trroev/prettier-config": "workspace:*",
     "@trroev/tsconfig": "workspace:*",
+    "@types/node": "^20.17.10",
     "@types/react": "catalog:next15",
     "eslint": "^9.17.0",
     "prettier": "^3.4.2",

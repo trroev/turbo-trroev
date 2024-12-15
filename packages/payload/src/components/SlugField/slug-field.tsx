@@ -1,33 +1,33 @@
 'use client'
 
-import {   useCallback, useEffect } from 'react'
-import type {FC, MouseEvent} from 'react';
+import type { TextFieldClientProps as TextFieldProps } from 'payload'
+import type { FC, MouseEvent } from 'react'
+import { useCallback, useEffect } from 'react'
 import {
   Button,
   FieldLabel,
   TextInput,
   useField,
-  useFieldProps,
   useFormFields,
 } from '@payloadcms/ui'
-import type {TextFieldClientProps} from 'payload';
 
-import { formatSlug } from '@trroev/payload/helpers/formatSlug'
+import { createSlug } from '@trroev/utils/createSlug'
 
 import './index.scss'
 
 type SlugFieldProps = {
   checkboxFieldPath: string
   fieldToUse: string
-} & TextFieldClientProps
+} & TextFieldProps
 
 export const SlugField: FC<SlugFieldProps> = ({
   checkboxFieldPath: checkboxFieldPathFromProps,
   field,
   fieldToUse,
+  path = '',
+  readOnly: readOnlyFromProps,
 }) => {
   const { label } = field
-  const { path, readOnly: readOnlyFromProps } = useFieldProps()
 
   const checkboxFieldPath = path.includes('.')
     ? `${path}.${checkboxFieldPathFromProps}`
@@ -57,7 +57,7 @@ export const SlugField: FC<SlugFieldProps> = ({
   useEffect(() => {
     if (checkboxValue) {
       if (fieldToUseValue) {
-        const formattedSlug = formatSlug(fieldToUseValue)
+        const formattedSlug = createSlug(fieldToUseValue)
 
         if (value !== formattedSlug) setValue(formattedSlug)
       } else if (value !== '') {
@@ -75,12 +75,12 @@ export const SlugField: FC<SlugFieldProps> = ({
     [checkboxValue, setCheckboxValue],
   )
 
-  const readOnly = readOnlyFromProps || checkboxValue
+  const readOnly = readOnlyFromProps ?? checkboxValue
 
   return (
     <div className="field-type slug-field-component">
       <div className="label-wrapper">
-        <FieldLabel field={field} htmlFor={`field-${path}`} label={label} />
+        <FieldLabel htmlFor={`field-${path}`} label={label} path={path} />
 
         <Button buttonStyle="none" className="lock-button" onClick={handleLock}>
           {checkboxValue ? 'Unlock' : 'Lock'}

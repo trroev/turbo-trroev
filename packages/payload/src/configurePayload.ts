@@ -1,12 +1,12 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import type { Config } from 'payload'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { buildConfig,  deepMerge } from 'payload'
-import type {Config} from 'payload';
+import { buildConfig, deepMerge } from 'payload'
 
 import { env } from '@trroev/env/payload'
 import { Media } from '@trroev/payload/collections/Media'
@@ -47,7 +47,7 @@ const baseConfig: Config = {
   plugins: [
     nestedDocsPlusPlugin({
       breadcrumbsFieldSlug: 'breadcrumbs',
-      collections: [Pages.slug],
+      collections: ['pages'],
       generateLabel: (_, doc) => doc.title as string,
       generateURL: docs =>
         docs.reduce((acc, doc) => `${acc}/${doc.slug as string}`, ''),

@@ -1,5 +1,10 @@
+import type {
+  CollectionBeforeChangeHook,
+  CollectionSlug,
+  Config,
+  Plugin,
+} from 'payload'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
-import type {CollectionBeforeChangeHook, CollectionSlug, Config, Plugin} from 'payload';
 
 import { isObject } from '@trroev/utils/isObject'
 
@@ -9,8 +14,7 @@ const setPathnameHook: CollectionBeforeChangeHook = ({ data }) => {
     'breadcrumbs' in data &&
     Array.isArray(data.breadcrumbs)
   ) {
-    const lastBreadcrumb: unknown =
-      data.breadcrumbs.at(-1)
+    const lastBreadcrumb: unknown = data.breadcrumbs.at(-1)
 
     if (
       isObject(lastBreadcrumb) &&
@@ -36,7 +40,9 @@ export const nestedDocsPlusPlugin =
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         const fields = [...(collection.fields ?? [])]
 
-        if (pluginConfig.collections.includes(collection.slug)) {
+        if (
+          pluginConfig.collections.includes(collection.slug as CollectionSlug)
+        ) {
           fields.push({
             admin: {
               position: 'sidebar',
@@ -65,7 +71,7 @@ export const nestedDocsPlusPlugin =
 
         for (const collectionName of pluginConfig.collections) {
           const docsToUpdate = await payload.find({
-            collection: collectionName as CollectionSlug,
+            collection: collectionName,
             depth: 1,
             limit: 0,
             where: {
@@ -77,7 +83,7 @@ export const nestedDocsPlusPlugin =
 
           for (const doc of docsToUpdate.docs) {
             await payload.update({
-              collection: collectionName as CollectionSlug,
+              collection: collectionName,
               data: {
                 ...doc,
               },

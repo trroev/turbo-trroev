@@ -1,5 +1,6 @@
-import path, { dirname, join } from 'node:path'
-import type {StorybookConfig} from '@storybook/nextjs';
+// eslint-disable-next-line unicorn/prefer-node-protocol, unicorn/import-style
+import path, { dirname, join } from 'path'
+import type { StorybookConfig } from '@storybook/nextjs'
 
 const config: StorybookConfig = {
   addons: [
@@ -23,8 +24,8 @@ const config: StorybookConfig = {
 
   typescript: { reactDocgen: 'react-docgen' },
 
-  webpackFinal: async (config, { configType }) => {
-    config.resolve = config.resolve || {}
+  webpackFinal: (config, { configType: _configType }) => {
+    config.resolve = config.resolve ?? {}
     config.resolve.fallback = {
       assert: false,
       buffer: false,
@@ -52,10 +53,10 @@ const config: StorybookConfig = {
       zlib: false,
     }
 
-    config.module = config.module || {}
-    config.module.rules = config.module.rules || []
+    config.module = config.module ?? {}
+    config.module.rules = config.module.rules ?? []
     config.module.rules.push({
-      include: path.resolve(__dirname, '../src'),
+      include: path.resolve(process.cwd(), '../src'),
       test: /\.css$/,
       use: [
         'style-loader',
@@ -74,6 +75,7 @@ const config: StorybookConfig = {
 
 export default config
 
-function getAbsolutePath(value) {
+function getAbsolutePath(value: string) {
+  // eslint-disable-next-line unicorn/prefer-module
   return dirname(require.resolve(join(value, 'package.json')))
 }
