@@ -1,4 +1,4 @@
-import type {CheckboxField, TextField} from 'payload';
+import type { CheckboxField, TextField } from 'payload'
 
 import { useFormatSlug } from '@trroev/payload/hooks/FormatSlug'
 

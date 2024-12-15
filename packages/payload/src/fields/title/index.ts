@@ -1,5 +1,5 @@
-import { deepMerge  } from 'payload'
-import type {TextField} from 'payload';
+import type { TextField } from 'payload'
+import { deepMerge } from 'payload'
 
 type TitleField = (overrides?: Partial<TextField>) => TextField
 

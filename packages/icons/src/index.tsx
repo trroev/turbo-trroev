@@ -1,6 +1,6 @@
-import { createElement  } from 'react'
-import type {FC} from 'react';
-import type {LucideProps} from 'lucide-react';
+import type { LucideProps } from 'lucide-react'
+import type { FC } from 'react'
+import { createElement } from 'react'
 
 import * as Icons from './icons'
 

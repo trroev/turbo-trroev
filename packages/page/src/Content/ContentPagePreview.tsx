@@ -1,6 +1,6 @@
 'use client'
 
-import type {FC} from 'react';
+import type { FC } from 'react'
 import { useRouter } from 'next/navigation'
 import { RefreshRouteOnSave } from '@payloadcms/live-preview-react'
 
@@ -11,7 +11,9 @@ export const ContentPagePreview: FC = () => {
 
   return (
     <RefreshRouteOnSave
-      refresh={() => { router.refresh(); }}
+      refresh={() => {
+        router.refresh()
+      }}
       serverURL={env.NEXT_PUBLIC_PAYLOAD_URL}
     />
   )

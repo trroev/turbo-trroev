@@ -1,4 +1,4 @@
-import type {CollectionConfig} from 'payload';
+import type { CollectionConfig } from 'payload'
 
 import { EveryoneAccess } from '@trroev/payload/access/Everyone'
 import { LoggedInAccess } from '@trroev/payload/access/LoggedIn'

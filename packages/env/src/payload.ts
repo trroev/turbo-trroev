@@ -8,7 +8,7 @@ export const env = createEnv({
     NEXT_PUBLIC_PAYLOAD_URL: z.string(),
   },
   emptyStringAsUndefined: true,
-   
+
   experimental__runtimeEnv: {
     NEXT_PUBLIC_PAYLOAD_URL: process.env.NEXT_PUBLIC_PAYLOAD_URL,
   },

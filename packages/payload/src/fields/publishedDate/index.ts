@@ -1,5 +1,5 @@
-import {  deepMerge } from 'payload'
-import type {DateField} from 'payload';
+import type { DateField } from 'payload'
+import { deepMerge } from 'payload'
 
 type PublishedDateField = (overrides?: Partial<DateField>) => DateField
 

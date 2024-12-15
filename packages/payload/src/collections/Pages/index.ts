@@ -1,8 +1,8 @@
+import type { CollectionConfig } from 'payload'
 import {
   createBreadcrumbsField,
   createParentField,
 } from '@payloadcms/plugin-nested-docs'
-import type {CollectionConfig} from 'payload';
 
 import { env } from '@trroev/env/payload'
 import { AdminAccess } from '@trroev/payload/access/Admin'

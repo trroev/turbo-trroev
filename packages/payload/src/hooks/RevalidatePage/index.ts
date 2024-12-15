@@ -1,4 +1,4 @@
-import type {CollectionAfterChangeHook, PayloadRequest} from 'payload';
+import type { CollectionAfterChangeHook, PayloadRequest } from 'payload'
 
 import { env } from '@trroev/env/payload'
 

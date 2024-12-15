@@ -1,5 +1,5 @@
-import { forwardRef, memo   } from 'react'
-import type {Ref, SVGProps} from 'react';
+import type { Ref, SVGProps } from 'react'
+import { forwardRef, memo } from 'react'
 
 const SvgComponent = (
   props: SVGProps<SVGSVGElement>,

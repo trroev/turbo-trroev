@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+
 import { Button } from '@trroev/ui/Button'
 import {
   Card,

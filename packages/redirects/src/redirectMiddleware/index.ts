@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-import type {Redirect} from '@trroev/types/Redirect';
+import type { Redirect } from '@trroev/types/Redirect'
 
 type RedirectMiddlewareProps = {
   getRedirectResponse: (pathname: string) => Promise<Redirect | undefined>
