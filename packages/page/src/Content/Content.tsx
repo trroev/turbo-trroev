@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import type { FC } from 'react'
 import { cache } from 'react'
 import { notFound } from 'next/navigation'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 
 import { BlockRenderer } from '@trroev/payload/components/BlockRenderer'
 import config from '@trroev/payload/payload-config'
@@ -17,7 +17,7 @@ type ContentPageProps = {
 }
 
 const getPage = cache(async (slug?: string[], isLivePreview?: boolean) => {
-  const payload = await getPayloadHMR({ config })
+  const payload = await getPayload({ config })
   const pathname = `/${slug?.join('/') ?? ''}`
   const response = await payload.find({
     collection: 'pages',
@@ -29,7 +29,7 @@ const getPage = cache(async (slug?: string[], isLivePreview?: boolean) => {
 })
 
 const getPages = cache(async () => {
-  const payload = await getPayloadHMR({ config })
+  const payload = await getPayload({ config })
   const response = await payload.find({ collection: 'pages' })
 
   return response.docs
